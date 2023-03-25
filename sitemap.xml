@@ -1,77 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-	<loc>https://bgr.glitch.me/</loc>
+	<loc>https://bg-records.com/</loc>
 	<lastmod>2023-03-23T18:51:43+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/songs</loc>
+	<loc>https://bg-records.com/songs</loc>
 	<lastmod>2023-03-23T18:51:43+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/podcasts</loc>
+	<loc>https://bg-records.com/podcasts</loc>
 	<lastmod>2023-03-23T18:51:43+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/movies</loc>
+	<loc>https://bg-records.com/movies</loc>
 	<lastmod>2023-03-23T18:51:43+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/artists</loc>
+	<loc>https://bg-records.com/artists</loc>
 	<lastmod>2023-03-23T18:51:43+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/song</loc>
+	<loc>https://bg-records.com/song</loc>
 	<lastmod>2023-03-23T18:51:43+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/movie</loc>
+	<loc>https://bg-records.com/movie</loc>
 	<lastmod>2023-03-23T18:51:47+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/api/badgelister.html</loc>
+	<loc>https://bg-records.com/api/badgelister.html</loc>
 	<lastmod>2023-03-23T18:51:50+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/artist</loc>
+	<loc>https://bg-records.com/artist</loc>
 	<lastmod>2023-03-23T18:51:50+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/badges</loc>
+	<loc>https://bg-records.com/badges</loc>
 	<lastmod>2023-03-23T18:51:53+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/api/about.html</loc>
+	<loc>https://bg-records.com/api/about.html</loc>
 	<lastmod>2023-03-23T18:51:54+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/info</loc>
+	<loc>https://bg-records.com/info</loc>
 	<lastmod>2023-03-23T18:52:05+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/artists/next</loc>
+	<loc>https://bg-records.com/artists/next</loc>
 	<lastmod>2023-03-23T18:52:05+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/artists/podcasts</loc>
+	<loc>https://bg-records.com/artists/podcasts</loc>
 	<lastmod>2023-03-23T18:52:05+01:00</lastmod>
 	<priority>0.8</priority>
 </url>
 <url>
-	<loc>https://bgr.glitch.me/podcast</loc>
+	<loc>https://bg-records.com/podcast</loc>
 	<lastmod>2023-03-23T18:52:16+01:00</lastmod>
 	<priority>1.0</priority>
 </url>
