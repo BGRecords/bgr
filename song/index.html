@@ -1,0 +1,172 @@
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<!-- Google Tag Manager -->
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-TVZNBT6");
+</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://bgr.glitch.me/style.css" />
+<meta
+  name="description"
+  content="Distribute music or listen to podcasts or songs!"
+/>
+<div class="header">
+  <a href="https://bgr.glitch.me/"
+    ><img
+      src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/BGRECORDS2.png?v=1677955982282"
+      height="80"
+      width="120"
+  /></a>
+</div>
+<h1>
+  Song: <span id="song"></span> |
+  <a id="spotify" href="https://open.spotify.com/track/" target="_new"
+    >Play -- on Spotify</a
+  >
+</h1>
+<h1>Released: <span id="year"></span></h1>
+<h2>
+  Artist/Channel: <a id="artist"></a><span id="badgelib"></span>
+  <script>
+    $("#badgelib").load("https://bgr.glitch.me/api/badgelister.html");
+  </script>
+</h2>
+<h2>Info: <span id="copyright"></span></h2>
+<audio rel="preload" controls controlslist="nodownload noplaybackrate">
+  <source rel="preload" preload="metadata" id="player" type="audio/mpeg" />
+</audio>
+<div>
+  <div>
+    <h2>Behind The Song</h2>
+    <p id="behindtrack">
+      N/A
+    </p>
+  </div>
+
+  <div>
+    <h2>Lyrics</h2>
+    <p id="lyrics">
+      N/A
+    </p>
+  </div>
+</div>
+<script>
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var song = parts[0];
+  var artist = parts[1];
+  var copyright = parts[2];
+  var year = parts[3];
+  var aboutartist = parts[4];
+  var scode = parts[5];
+  var spotlight = parts[6];
+
+  if (artist === "Boss_GamerYT") {
+    var spotlight = "Homewave";
+  }
+  if (artist === "Various Artists") {
+    var aboutartist = "Various Artists Channel";
+    var artist = "Various Artists - Topic";
+  }
+  if (artist === "") {
+    var aboutartist = "Various Artists Channel";
+    var artist = "Various Artists - Topic";
+  }
+
+  if (song === "Invincible (Liam McMaster Remix)") {
+    document.getElementById("lyrics").innerHTML = "Here we go <br>Invincible";
+  }
+
+
+  if (song === "Invincible (Liam McMaster Remix)") {
+    document.getElementById('behindtrack').innerHTML = "This remix was one of my first remixes."
+  }
+
+  const artists = artist.split(",");
+
+  const linksa = artists;
+
+  for (const linka of linksa) {
+    var sela = linka;
+
+    // Get the element
+    var elem = document.querySelector("#artist");
+
+    // Create a copy of it
+    var clone = elem.cloneNode(true);
+
+    // Update the ID and add a class
+    clone.id = "elem2";
+    clone.innerHTML = sela + " ".replace(" ", ", ");
+    clone.setAttribute(
+      "href",
+      "https://bgr.glitch.me/artist" +
+        "#" +
+        sela.replace(" ", "") +
+        "#" +
+        aboutartist +
+        "#" +
+        spotlight
+    );
+
+    // Inject it into the DOM
+    elem.after(clone);
+  }
+
+  document.getElementById("song").innerHTML = song;
+  //document.getElementById("artist").innerHTML = artist
+  document.getElementById("copyright").innerHTML = copyright;
+  document.getElementById("year").innerHTML = year;
+  document.title = song + " (" + artist + ")";
+  //document.getElementById('artist').setAttribute('href', "https://bgr.glitch.me/artist" + "#" + artist + "#" + aboutartist + "#" + spotlight);
+  document
+    .getElementById("spotify")
+    .setAttribute("href", "https://open.spotify.com/track/" + scode);
+  document
+    .getElementById("player")
+    .setAttribute(
+      "src",
+      "https://cdn.glitch.me/1d504920-1dff-4f7f-8350-daf89caa11d4/" +
+        song +
+        ".wav"
+    );
+  document.getElementById("player").preload = "none";
+  document.getElementById("spotify").innerHTML = "Play " + song + " on Spotify";
+</script>
+<style>
+  .header {
+    border-radius: 20px;
+    padding: 20px;
+    width: 250x;
+    height: 90px;
+    text-align: center;
+    color: white;
+    background-color: #000000;
+  }
+  body {
+    background-color: lightgray;
+    text-align: center;
+  }
+</style>
+
+<script>
+  player.addEventListener("loadedmetadata", function () {
+    if (player.buffered.length === 0) return;
+
+    const bufferedSeconds = player.buffered.end(0) - player.buffered.start(0);
+    console.log(`${bufferedSeconds} seconds of player are ready to play.`);
+  });
+</script>

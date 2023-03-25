@@ -1,0 +1,149 @@
+<!-- Google Tag Manager -->
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-TVZNBT6");
+</script>
+<!-- End Google Tag Manager -->
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+<link rel="stylesheet" href="https://bgr.glitch.me/style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Boss_GamerRECORDS - PODCASTS</title>
+<meta name="title" content="Boss_GamerRecords - Podcasts" />
+<meta
+  name="description"
+  content="Distribute music or listen to podcasts or songs!"
+/>
+<div class="header">
+  <a href="https://bgr.glitch.me/"
+    ><img
+      src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/BGRECORDS2.png?v=1677955982282"
+      height="80"
+      width="120"
+  /></a>
+</div>
+<div style="text-align: center">
+  <h1>
+    Public Podcast List
+    <br />
+    <input
+      oninput="w3.filterHTML('#trackslist', 'div', this.value)"
+      placeholder="Search Podcasts"
+    />
+  </h1>
+  <hr />
+</div>
+<div id="trackslist">
+  <script>
+    const music = [
+      {
+        song: "'Fire Loss'",
+        artist: "'Boss_GamerYT'",
+        aboutartist: "'Music artist since 2016!'",
+        released: "2023",
+        copyright: "0",
+        scode: "wav",
+        spotlight: "'undefined'",
+      },
+    ];
+
+    //document.getElementById("randomidk").innerHTML = music[1].song;
+    const linksa = music;
+
+    for (const linka of linksa) {
+      var sela = linka;
+
+      sela =
+        "<a class='podcast' song=" +
+        sela.song +
+        " " +
+        "artist=" +
+        sela.artist +
+        " " +
+        "aboutartist=" +
+        sela.aboutartist +
+        " " +
+        "year=" +
+        sela.released +
+        " " +
+        "copyright=" +
+        sela.copyright +
+        " " +
+        "scode=" +
+        sela.scode +
+        " " +
+        "pin=" +
+        sela.spotlight +
+        " " +
+        ">" +
+        "</a>"; // + "<img src=" + 'https://dummyimage.com/600x400/000/fff&text=' + sela.song + " " + "height="+ "50" + " " + "width=" + "50" + " " + "style=" + 'display: inline;' + " "
+      document.write(
+        '<div> <span class="material-symbols-sharp">forward</span>' +
+          sela +
+          "</div><hr>"
+      );
+    }
+  </script>
+</div>
+<style>
+  a[song] span {
+    display: none;
+  }
+  a[song]:after {
+    text-align: center;
+    white-space: pre;
+    content: attr(song) " by " attr(artist) "\A ("attr(year) ")" " | " attr(
+        copyright
+      ) " Episodes";
+  }
+  .header {
+    border-radius: 20px;
+    padding: 20px;
+    width: 250x;
+    height: 90px;
+    text-align: center;
+    color: white;
+    background-color: #000000;
+  }
+  body {
+    background-color: lightgray;
+    text-align: center;
+  }
+</style>
+
+<script>
+  const links = document.getElementsByClassName("podcast");
+
+  for (const link of links) {
+    var sel = link;
+    sel.setAttribute(
+      "href",
+      "https://bgr.glitch.me/podcast" +
+        "#" +
+        sel.getAttribute("song") +
+        "#" +
+        sel.getAttribute("artist") +
+        "#" +
+        sel.getAttribute("copyright") +
+        "#" +
+        sel.getAttribute("year") +
+        "#" +
+        sel.getAttribute("aboutartist") +
+        "#" +
+        sel.getAttribute("scode") +
+        "#" +
+        sel.getAttribute("pin")
+    );
+  }
+</script>

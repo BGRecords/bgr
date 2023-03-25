@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <br>
+<span style="font-size: 20px;">Badges:</span>
+<span id="bluebadge" style="display: none;"><span style="color: blue; font-size: 20px;">
+    <img src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/check.png?v=1678037355442" width="20px" height="20px" style="position: relative; transform: translateY(15%);">
+    </span>
+  </span>
+  </span>
+<span id="orangebadge" style="display: none;"> 
+  <span style="color: orange; font-size: 20px;">
+    <img src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/check.png?v=1678037355442" width="20px" height="20px" style="position: relative; transform: translateY(15%); filter: hue-rotate(140deg);">
+  </span>
+</span>
+<span id="purplebadge" style="display: none;"> 
+  <span style="color: purple; font-size: 20px;">
+    <img src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/check.png?v=1678037355442" width="20px" height="20px" style="position: relative; transform: translateY(15%); filter: hue-rotate(50deg);"> 
+  </span>
+</span>
+<span id="partnerbadge" style="display: none;"> 
+  <span style="color: lime; font-size: 20px;">
+    <img src="https://cdn.glitch.global/1d504920-1dff-4f7f-8350-daf89caa11d4/partner.png?v=1679319997711" width="20px" height="20px" style="position: relative; transform: translateY(15%); filter: hue-rotate(159deg);"> 
+  </span>
+
+</span>
+<span id="greenbadge" style="display: none;"> 
+  <span style="color: green; font-size: 20px;">
+    <img src="https://cdn.glitch.global/1d504920-1dff-4f7f-8350-daf89caa11d4/partner.png?v=1679319997711" width="20px" height="20px" style="position: relative; transform: translateY(15%); filter: hue-rotate(210deg);"> 
+  </span>
+</span>
+  <span style="display: none;" id="badgesinfo">
+    <a href="https://bgr.glitch.me/badges"><span class="material-symbols-sharp">info</span></a>
+  </span>
+<script>
+
+</script>
+
+<script>
+  const badges = [
+  { holder: "Boss_GamerYT",  badgeid: "bluebadge" },
+  { holder: "Cliptech",  badgeid: "bluebadge" },
+  { holder: "Liam McMaster",  badgeid: "bluebadge" },
+  { holder: "Boss_GamerYT",  badgeid: "orangebadge" },
+  { holder: "Boss_GamerYT",  badgeid: "greenbadge" },
+  { holder: "Boss_GamerYT",  badgeid: "purplebadge" },
+  { holder: "Boss_GamerYT",  badgeid: "partnerbadge" },
+  { holder: "Ren",  badgeid: "bluebadge" },
+];
+
+//document.getElementById("randomidk").innerHTML = music[1].song;
+const badgesl = badges;
+
+for (const badgeai of badgesl) {
+var cbadge = badgeai
+
+ //   sela = "<a class='song' song=" + sela.song + " " + "artist=" + sela.artist + " " + "aboutartist=" + sela.aboutartist + " " + "year=" + sela.released + " " + "copyright=" + sela.copyright + " " + "scode=" + sela.scode + " " + "pin=" + sela.spotlight + " " + ">" + "</a>"// + "<img src=" + 'https://dummyimage.com/600x400/000/fff&text=' + sela.song + " " + "height="+ "50" + " " + "width=" + "50" + " " + "style=" + 'display: inline;' + " "
+//    document.write('<div> <span class="material-symbols-sharp">forward</span><h5 hidden>'+ selab.song +'</h5>'+sela+'<hr></div>');
+if (artist === cbadge.holder) {
+  document.getElementById('badgesinfo').style.display = "inline"
+  document.getElementById(cbadge.badgeid).style.display = "inline"
+}
+}
+</script>

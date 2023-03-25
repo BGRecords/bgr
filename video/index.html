@@ -1,0 +1,94 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<!-- Google Tag Manager -->
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-TVZNBT6");
+</script>
+<!-- End Google Tag Manager -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://bgr.glitch.me/style.css" />
+<div class="header">
+  <a href="https://bgr.glitch.me/"
+    ><img
+      src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/BGRECORDS2.png?v=1677955982282"
+      height="80"
+      width="120"
+  /></a>
+</div>
+<h1>
+  <span id="song"></span>
+</h1>
+<h1><span id="year" hidden></span></h1>
+<h2>
+  BGR Channel: <a id="artist"></a><span id="badgelib"></span>
+  <script>
+    $("#badgelib").load("https://bgr.glitch.me/api/badgelister.html");
+  </script>
+</h2>
+<h2 hidden>Episodes: <span id="copyright"></span></h2>
+<h1>YouTube Video:</h1>
+<iframe id="player" width="560" height="315" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<script>
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var song = parts[0];
+  var artist = parts[1];
+  var copyright = parts[2];
+  var year = parts[3];
+  var aboutartist = parts[4];
+  var format = parts[5];
+  var spotlight = parts[6];
+  var season = parts[7];
+
+  if (artist === "Various Movies") {
+    var aboutartist = "Various Movies Channel";
+    var artist = "Movie - Topic";
+  }
+  if (artist === "") {
+    var aboutartist = "Various Movies Channel";
+    var artist = "Various Movies - Topic";
+  }
+
+  document.getElementById("song").innerHTML = song;
+  document.getElementById("artist").innerHTML = artist;
+  document.getElementById("copyright").innerHTML = copyright;
+  document.getElementById("year").innerHTML = year;
+  //document.getElementById("season").innerHTML = season;
+  //document.getElementById("ep").innerHTML = copyright;
+  document.title = song + " (" + artist + ")";
+  //document.getElementById('artist').setAttribute('href', "https://bgr.glitch.me/artist" + "#" + artist + "#" + aboutartist + "#" + spotlight);
+  document
+    .getElementById("player")
+    .setAttribute(
+      "src",
+      "https://www.youtube.com/embed/" +
+        copyright
+    );
+</script>
+
+<style>
+  .header {
+    border-radius: 20px;
+    padding: 20px;
+    width: 250x;
+    height: 90px;
+    text-align: center;
+    color: white;
+    background-color: #000000;
+  }
+  body {
+    background-color: lightgray;
+    text-align: center;
+  }
+</style>

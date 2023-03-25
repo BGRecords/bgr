@@ -1,0 +1,144 @@
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+<link rel="stylesheet" href="https://bgr.glitch.me/style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<div class="header">
+  <a href="https://bgr.glitch.me/"
+    ><img
+      src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/BGRECORDS2.png?v=1677955982282"
+      height="80"
+      width="120"
+  /></a>
+</div>
+<h2>
+  <div style="text-align: center">
+    <span style="text-align: center">
+      Hello <span id="name"></span>,
+      <br />
+      <span style="text-align: center"
+        >Your <span id="type"></span> was reviewed!</span
+      >
+      Your <span id="typeb"></span> called/for <span id="item"></span> was
+      <span id="aproval"></span>!
+      <br />
+      <br />
+      <span style="text-align: center"
+        ><a style="text-align: center" href="https://bgr.glitch.me/artists"
+          >Check Out Boss_GamerRecords for artists here</a
+        ></span
+      >
+      <br />
+      <br />
+      <code>
+        Do not share this info below:
+        <br />
+        Artist Key: <span id="key"></span> (Used for updating info/ uploading
+        music and episodes)
+      </code>
+      <br />
+      <h6><a id="webview">Not loading correctly? Open web view.</a></h6>
+    </span>
+  </div>
+</h2>
+<code hidden> API (For reviwers) name, type, aproval, key, item </code>
+<script>
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var name = parts[0];
+  var type = parts[1];
+  var aproval = parts[2];
+  var key = parts[3];
+  var item = parts[4];
+
+  if (type === "1") {
+    var type = "Song";
+  }
+  if (type === "2") {
+    var type = "Podcast Show";
+  }
+  if (type === "3") {
+    var type = "Podcast Episode";
+  }
+  if (type === "4") {
+    var type = "Account";
+  }
+  if (type === "5") {
+    var type = "Removal Request";
+  }
+  if (type === "6") {
+    var type = "Pitch Request";
+  }
+  if (type === "7") {
+    var type = "Channel Changes";
+  }
+
+  if (typeb === "1") {
+    var type = "Song";
+  }
+  if (typeb === "2") {
+    var type = "Podcast Show";
+  }
+  if (typeb === "3") {
+    var type = "Podcast Episode";
+  }
+  if (typeb === "4") {
+    var type = "Account";
+  }
+  if (typeb === "5") {
+    var type = "Removal Request";
+  }
+  if (typeb === "6") {
+    var type = "Pitch Request";
+  }
+  if (typeb === "7") {
+    var type = "Channel Changes";
+  }
+
+  if (aproval === "1") {
+    var aproval = "Declined";
+  }
+  if (aproval === "2") {
+    var aproval = "Approved";
+  }
+
+  document.getElementById("name").innerHTML = name;
+  document.getElementById("type").innerHTML = type;
+  document.getElementById("typeb").innerHTML = type;
+  document.getElementById("aproval").innerHTML = aproval;
+  document.getElementById("key").innerHTML = key;
+  document.getElementById("item").innerHTML = item;
+  document.getElementById("webview").href =
+    "https://bgr.glitch.me/mail/view#" +
+    name +
+    "#" +
+    type +
+    "#" +
+    aproval +
+    "#" +
+    key +
+    "#" +
+    item;
+</script>
+
+<style>
+  .header {
+    border-radius: 20px;
+    padding: 20px;
+    width: 250x;
+    height: 90px;
+    text-align: center;
+    color: white;
+    background-color: #000000;
+  }
+  body {
+    background-color: lightgray;
+    text-align: center;
+  }
+
+  * {
+    text-align: center;
+  }
+</style>
