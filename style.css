@@ -57,7 +57,7 @@ input {
     display: none
   }
   *:after{
-    content: "Mobile currently isn't supported in your country."
+    content: "Mobile currently isn't supported in your country. :("
   }
 }
 */
