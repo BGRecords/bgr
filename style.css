@@ -1,0 +1,64 @@
+body{
+  font-family: Verdana;
+}
+
+input {
+  border-radius: 100px;
+  text-align: center;
+}
+/*
+@media screen and (max-width: 480px) {
+  span{
+    display: none
+  }
+    input{
+    display: none
+  }
+    div{
+    display: none
+  }
+    button{
+    display: none
+  }
+    hr{
+    display: none
+  }
+    h1{
+    display: none
+  }
+    h2{
+    display: none
+  }
+    code{
+    display: none
+  }
+    h3{
+    display: none
+  }
+    h4{
+    display: none
+  }
+    h5{
+    display: none
+  }
+    h6{
+    display: none
+  }
+    audio{
+    display: none
+  }
+    a{
+    display: none
+  }
+    p{
+    display: none
+  }
+    footer{
+    display: none
+  }
+  *:after{
+    content: "Mobile currently isn't supported in your country."
+  }
+}
+*/
+

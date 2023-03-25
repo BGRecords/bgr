@@ -1,0 +1,90 @@
+<h2>
+  Mailing Manual Version:
+</h2>
+<input type="email" value="Email" id="email">
+<hr>
+<input type="text" value="Username" id="name">
+<br>
+<input type="text" value="Item Name" id="item">
+<br>
+<input type="text" value="Key" id="key">
+<hr>
+<input type="checkbox" id="song">Song
+<br>
+<input type="checkbox" id="podshow">Podcast Show
+<br>
+<input type="checkbox" id="podep">Podcast Episode
+<br>
+<input type="checkbox" id="account">Account
+<br>
+<input type="checkbox" id="delete">Removal Request
+<br>
+<input type="checkbox" id="pitch">Pitch Request
+<br>
+<input type="checkbox" id="update">Channel Changes
+<hr>
+<input type="checkbox" id="no">Decline
+<br>
+<input type="checkbox" id="yes">Approve
+<br>
+<button onclick="run();">Build</button>
+<br>
+<span id="output"></span>
+<br>
+<a target="_new" id="outputlink"></a>
+<br>
+<a target="_new" id="outputlinkemail"></a>
+<script>
+var typea = document.getElementById('song')
+var typeb = document.getElementById('podshow')
+var typec = document.getElementById('podep')
+var typed = document.getElementById('account')
+var typee = document.getElementById('delete')
+var typef = document.getElementById('pitch')
+var typeg = document.getElementById('update')
+
+var no = document.getElementById('no')
+var yes = document.getElementById('yes')
+
+
+function run() {
+var aname = document.getElementById('name').value
+var aitem = document.getElementById('item').value
+var akey = document.getElementById('key').value
+var akey = document.getElementById('email').value
+if (typea.checked === true) {
+  var type = "1"
+}
+if (typeb.checked === true) {
+  var type = "2"
+}
+if (typec.checked === true) {
+  var type = "3"
+}
+if (typed.checked === true) {
+  var type = "4"
+}
+if (typee.checked === true) {
+  var type = "5"
+}
+if (typef.checked === true) {
+  var type = "6"
+}
+if (typeg.checked === true) {
+  var type = "7"
+}
+
+if (no.checked === true) {
+  var state = "1"
+}
+if (yes.checked === true) {
+  var state = "2"
+}
+
+
+document.getElementById('output').innerHTML = "https://bgr.glitch.me/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem
+document.getElementById('outputlink').href = "https://bgr.glitch.me/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem
+document.getElementById('outputlink').innerHTML = "https://bgr.glitch.me/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem
+document.getElementById('outputlinkemail').innerHTML = "mailto:" + email + "?subject? = BG Records | " + type + " was " + state
+}
+</script>

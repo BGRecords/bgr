@@ -1,0 +1,96 @@
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="stylesheet" href="https://betabossgamerrecords.glitch.me/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Boss_GamerRECORDS - RELEASES</title>
+<meta name="title" content="Boss_GamerRecords - Songs">
+<meta name="description" content="Distribute music or listen to podcasts or songs!">
+<div class="header">
+  <a href="https://betabossgamerrecords.glitch.me/"><img src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/BGRECORDS2.png?v=1677955982282" height="80" width="120"></a>
+</div>
+<div style="text-align: center;">
+  <h1>
+    Public Track List
+    <br>
+    <input oninput="w3.filterHTML('#trackslist', 'div', this.value)" placeholder="Search Music">
+  </h1>
+  <hr>
+</div>
+<div id="trackslist">
+<script>
+  const music = [
+  { song: "'Hopwave'",  artist: "'Boss_GamerYT'", aboutartist: "'Music artist since 2016!'", released: "2021", copyright: "Copyrighted", scode: "1lSWpTjYnkpVXBbpLqVxUx", spotlight: "'undefined'"},
+  { song: "'Relax'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "1jj2gSM5m38cOesYz0q16u", spotlight: "'undefined'"},
+  { song: "'Invincible (Liam McMaster Remix)'",  artist: "'Boss_GamerYT'", aboutartist: "'Music artist since 2016!'", released: "2023", copyright: "'Not Copyrighted'", scode: "3VEoBuuDDKsyvJUP3CAgqa", spotlight: "'undefined'"},
+  { song: "'Dancewave'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "1mju2zFOJDbyG7ux1CZJOb", spotlight: "'undefined'"},
+  { song: "'Acidwave'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "3JhxieGjNw3ewblDsP6k6D", spotlight: "'undefined'"},
+  { song: "'Breakitdown'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "48X7DOwAv6fnODzbkBTfq5", spotlight: "'undefined'"},
+  { song: "'Tunewave'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "2h83H154ZNDKbRxQSyNb9Z", spotlight: "'undefined'"},
+  { song: "'Numbwave'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "6xPcfFPjVCFZaH3M3BJncQ", spotlight: "'undefined'"},
+  { song: "'Reckless (Extended)'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "7bhQUGC6YIWYabw9GBD7pW", spotlight: "'undefined'"},
+  { song: "'Reckless'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "6Fb81Z789qCaw7vKRCbG2i", spotlight: "'undefined'"},
+  { song: "'Shockwave'",  artist: "'Boss_GamerYT'", aboutartist: "'Music artist since 2016!'", released: "2023", copyright: "'Copyrighted'", scode: "3Zzeq2l7LYyuBE5INfaaUQ", spotlight: "'undefined'"},
+  { song: "'Electrowave'",  artist: "'Boss_GamerYT'", aboutartist: "'Music artist since 2016!'", released: "2023", copyright: "'Copyrighted'", scode: "2ZjDWurQEWLiJ2K3izTgwd", spotlight: "'undefined'"},
+  { song: "'Littler'",  artist: "'Boss_GamerYT'", aboutartist: "'Music artist since 2016!'", released: "2023", copyright: "'Copyrighted'", scode: "4kiOXRkGqoZfgsa3nePvCM", spotlight: "'undefined'"},
+  { song: "'Fun'",  artist: "'Boss_GamerYT'", aboutartist: "'Music artist since 2016!'", released: "2023", copyright: "'Copyrighted'", scode: "2yO1ZK3QSt6xclBqHctLDj", spotlight: "'undefined'"},
+  { song: "'Night'",  artist: "'Boss_GamerYT'", aboutartist: "'Music artist since 2016!'", released: "2023", copyright: "'Copyrighted'", scode: "7ngFiojubhzMe7sxVt3fP2", spotlight: "'undefined'"},
+  { song: "'Little'",  artist: "'Boss_GamerYT'", aboutartist: "'Music artist since 2016!'", released: "2023", copyright: "'Copyrighted'", scode: "0abbddUrKbzpMG135Tscu8", spotlight: "'undefined'"},
+  { song: "'Homewave'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "24sdUn1ggTKFmCtcqtics2", spotlight: "'undefined'"},
+  { song: "'Linkwave'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "0Qtxao5wppfzmg415p1kUA", spotlight: "'undefined'"},
+  { song: "'Homewave (Sped Up)'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "5PvOsOrXM9IwK4vPOvkySw", spotlight: "'undefined'"},
+  { song: "'Relax (Sped Up)'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "3LWXIQCK3i28u49YFTefvq", spotlight: "'undefined'"},
+  { song: "'Numbwave (Sped Up)'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "6noxF8ymaqacwckULQxFbV", spotlight: "'undefined'"},
+  { song: "'Tunewave (Sped Up)'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "5l5dqYqaFXdCI1LquVgbex", spotlight: "'undefined'"},
+  { song: "'Littler (Sped Up)'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "4tlCaCxTo6ivW7Ar5IgOGM", spotlight: "'undefined'"},
+  { song: "'Fun (Sped Up)'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "1z7VNwKh0dB0jFTdl4ccRA", spotlight: "'undefined'"},
+  { song: "'Night (Sped Up)'",  artist: "'Boss_GamerYT, Liam McMaster'", aboutartist: "'Multi Artist Channels currently do not have the About feature.'", released: "2023", copyright: "'Copyrighted'", scode: "1R76EpDsX2qAjvswCqBfZO", spotlight: "'undefined'"},
+  { song: "'SCP Gamma 5 Theme'",  artist: "'Cliptech'", aboutartist: "'N/A'", released: "2022", copyright: "'Copyrighted'", scode: "5ABEzYQaR3JDvBKQuhPsO7", spotlight: "'undefined'"},
+  { song: "'War Of The Legends Theme'",  artist: "'Cliptech'", aboutartist: "'N/A'", released: "2022", copyright: "'Copyrighted'", scode: "3nZRsm2Xdg38NipcZ46XoL", spotlight: "'undefined'"},
+];
+
+//document.getElementById("randomidk").innerHTML = music[1].song;
+const linksa = music;
+
+for (const linka of linksa) {
+var sela = linka
+var selab = linka
+console.log(sela.song)
+
+    sela = "<a class='song' song=" + sela.song + " " + "artist=" + sela.artist + " " + "aboutartist=" + sela.aboutartist + " " + "year=" + sela.released + " " + "copyright=" + sela.copyright + " " + "scode=" + sela.scode + " " + "pin=" + sela.spotlight + " " + ">" + "</a>"// + "<img src=" + 'https://dummyimage.com/600x400/000/fff&text=' + sela.song + " " + "height="+ "50" + " " + "width=" + "50" + " " + "style=" + 'display: inline;' + " "
+    document.write('<div> <span class="material-symbols-sharp">forward</span><h5 hidden>'+ selab.song +'</h5>'+sela+'<hr></div>');
+}
+</script>
+  </div>
+<style>
+a[song] span {
+  display: none;
+}
+a[song]:after {
+  text-align: center;
+  white-space: pre;
+  content: attr(song) " by " attr(artist)"\A (" attr(year) ")"  " | " attr(copyright);
+}
+.header{
+  border-radius: 20px;
+  padding: 20px;
+  width: 250x;
+  height: 90px;
+  text-align: center;
+  color: white;
+  background-color: #000000;
+}
+body{
+  background-color: lightgray;
+  text-align: center;
+}
+</style>
+
+<script>
+const links = document.getElementsByClassName('song');
+
+for (const link of links) {
+var sel = link
+sel.setAttribute('href', "https://betabossgamerrecords.glitch.me/song" + "#" + sel.getAttribute('song') + "#" + sel.getAttribute('artist') + "#" + sel.getAttribute('copyright') + "#" + sel.getAttribute('year') + "#" + sel.getAttribute('aboutartist') + "#" + sel.getAttribute('scode') + "#" + sel.getAttribute('pin'));
+}
+</script>
+
