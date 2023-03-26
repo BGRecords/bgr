@@ -13,6 +13,7 @@ Hello <span id="name"></span>,
   <span style="text-align: center;">Your <span id="type"></span> was reviewed!</span>
 Your <span id="typeb"></span> called/for <span id="item"></span> was <span id="aproval"></span>!
 <br>
+  <span id="modcomment"></span>
 <br>
   <a href="https://bg-records.com/artists">Check Out Boss_GamerRecords for artists here</a>
 <br>
@@ -38,6 +39,7 @@ var type = parts[1]
 var aproval = parts[2]
 var key = parts[3]
 var item = parts[4]
+var comment = parts[5]
 
 
   
@@ -100,6 +102,7 @@ document.getElementById("typeb").innerHTML = type;
 document.getElementById("aproval").innerHTML = aproval;
 document.getElementById("key").innerHTML = key;
 document.getElementById("item").innerHTML = item;
+document.getElementById("modcomment").innerHTML = comment;
 </script>
 
 <style>
