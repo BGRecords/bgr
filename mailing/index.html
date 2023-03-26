@@ -23,6 +23,7 @@
       Your <span id="typeb"></span> called/for <span id="item"></span> was
       <span id="aproval"></span>!
       <br />
+        <span id="modcomment"></span>
       <br />
       <span style="text-align: center"
         ><a style="text-align: center" href="https://bgr.glitch.me/artists"
@@ -52,6 +53,7 @@
   var aproval = parts[2];
   var key = parts[3];
   var item = parts[4];
+  var comment = parts[5]
 
   if (type === "1") {
     var type = "Song";
@@ -121,6 +123,7 @@
     key +
     "#" +
     item;
+document.getElementById("modcomment").innerHTML = comment;
 </script>
 
 <style>
