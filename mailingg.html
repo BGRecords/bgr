@@ -3,11 +3,13 @@
 </h2>
 <input type="email" value="Email" id="email">
 <hr>
-<input type="text" value="Username" id="name">
+<input type="text" placeholder="Username" id="name">
 <br>
-<input type="text" value="Item Name" id="item">
+<input type="text" placeholder="Item Name" id="item">
 <br>
-<input type="text" value="Key" id="key">
+<input type="text" placeholder="Key" id="key">
+<br>
+<input type="text" placeholder="Comment" id="comment">
 <hr>
 <input type="checkbox" id="song">Song
 <br>
@@ -51,6 +53,8 @@ function run() {
 var aname = document.getElementById('name').value
 var aitem = document.getElementById('item').value
 var akey = document.getElementById('key').value
+var akey = document.getElementById('email').value
+var acomment = document.getElementById('comment').value
 if (typea.checked === true) {
   var type = "1"
 }
@@ -81,8 +85,8 @@ if (yes.checked === true) {
 }
 
 
-document.getElementById('output').innerHTML = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem
-document.getElementById('outputlink').href = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem
+document.getElementById('output').innerHTML = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem + "#" + acomment
+document.getElementById('outputlink').href = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem + "#" + acomment
 document.getElementById('outputlink').innerHTML = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem
 document.getElementById('outputlinkemail').innerHTML = "mailto:" + email + "?subject? = BG Records | " + type + " was " + state
 }
