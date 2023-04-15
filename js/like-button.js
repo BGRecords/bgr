@@ -1,4 +1,4 @@
-var firebaseURL = 'https://bgrecords-bc005.firebaseapp.com/like-button/';
+var firebaseURL = 'https://bgrecords-bc005-default-rtdb.firebaseio.com/';
 // update the likeCounts shown in a <span> beside each blogpost
 var postDivs = document.querySelectorAll('.post');
 
