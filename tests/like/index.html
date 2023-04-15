@@ -1,0 +1,41 @@
+<script src="https://cdn.firebase.com/js/client/2.2.7/firebase.js"></script>
+<script src="js/like-button.js"></script>
+<script>
+var firebaseURL = 'https://bgrecords-bc005.firebaseio.com/like-button/';
+
+var postDivs = document.querySelectorAll('.post');
+
+function getLikeCount(postID) {
+    var thisPostRef = new Firebase(firebaseURL + postID + '/like-count/');
+    thisPostRef.once('value', function(snapshot) {
+        if ( snapshot.val() ) {
+            document.querySelector('#' + postID + ' .like-count').innerHTML = snapshot.val() + ' likes';
+        } else {
+            return false;
+        }
+    });
+}
+
+for (var i = 0; i < postDivs.length; i++) {
+    var postID = postDivs[i].id;
+    var numLikes = getLikeCount(postID);
+}
+
+function likePost(id) {
+    var postRef = new Firebase(firebaseURL + id);
+    postRef.child('like-count').once('value', function(snapshot) {
+        var currentLikes = snapshot.val() ? snapshot.val() : 0;
+        postRef.update({
+            'postID': id,
+            'like-count': currentLikes + 1
+            }, function(error) {
+              if (error) {
+                console.log('Data could not be saved:' + error);
+              } else {
+                console.log('Data saved successfully');
+              }
+            });
+        getLikeCount(id);
+    });   
+}
+</script>
