@@ -1,0 +1,42 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <style type="text/css"> #users p, #users p.lead{ margin: 0; } </style>
+</head>
+<body>
+  <div class="login-container, container">
+    <h1>BGR Artist Panel Page</h1>
+    <hr/>
+    <div class="row">
+      <div class="col-md-6">
+      <input id="email" type="text" class="form-control" placeholder="Email">
+        <br>
+      <input id="password" type="password" class="form-control" placeholder="Password">
+        <br>
+      <button class="btn btn-primary addValue" id="submit">Login</button>
+      </div>
+    </div>
+      <br>
+      <h6>
+        To obtain an account you must have sumbitted an request that has been approved, The account details will be given in the email that states your approved.
+      </h6>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) and Bootstrap -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!-- Include Firebase Library and Config-->
+  <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+  <!-- users Store JavaScript -->
+  <script type="module" src="login.js"></script>
+</body>
+</html>
