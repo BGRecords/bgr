@@ -61,6 +61,16 @@ Hello, <span id="artist"></span>
   <button onclick="window.open('https://forms.gle/fvn4zCuCVdPwLXrK8')">
     I would like to pitch my album/ep to BGR.
   </button>
+  <hr>
+  <h2>
+    Account:
+  </h2>
+  <button onclick="window.open('https://bg-records.com/login')" class="btn-red">
+    Logout
+  </button>
+  <button onclick="window.open('https://bg-records.com/login')" class="btn-red" disabled>
+    Delete Account (N/A)
+  </button>
 </h2>
 <script>
   var type = window.location.hash.substr(1).replaceAll("%20", " ");
@@ -89,6 +99,22 @@ if (parts[1] !== "success") {
     background-color: blue;
     color: white;
     border: 4px solid cyan;
+    width: 190px;
+    height: 50px;
+    font-size: 14px;
+  }
+  .btn-red {
+    background-color: crimson;
+    color: white;
+    border: 2px solid red;
+    width: 190px;
+    height: 50px;
+    font-size: 15px;
+  }
+  .btn-red:hover {
+    background-color: crimson;
+    color: white;
+    border: 4px solid red;
     width: 190px;
     height: 50px;
     font-size: 14px;
