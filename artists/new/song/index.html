@@ -1,0 +1,107 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <style type="text/css"> #users p, #users p.lead{ margin: 0; } </style>
+</head>
+<body>
+  <div class="container">
+    <h1>BGR Song Application</h1>
+    <hr/>
+    <div class="row">
+      <div class="col-md-6">
+        <form method="post" name="contactForm">
+          <div class="form-group">
+            <label for="name">Song Name*</label>
+            <input type="text" class="form-control" id="name" required placeholder="Enter Song Name">
+          </div>
+          <div class="form-group">
+            <label for="artist">Artist Name*</label>
+            <input type="text" class="form-control" id="artist" required placeholder="Enter Artist Name">
+          </div>
+          <div class="form-group">
+            <label for="key">Artist Key*</label>
+            <h6>
+              Enter your artist key here.
+            </h6>
+            <input type="number" class="form-control" id="key" required placeholder="XXXXXXXX">
+          </div>
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <h6>
+              Enter email rigisted with the artist key here.
+            </h6>
+            <input type="email" class="form-control" id="email" required placeholder="Enter Email">
+          </div>
+          <div class="form-group">
+            <label for="url">Song URL</label>
+            <h5>
+              This will be your main artist title for content like songs, podcasts!
+            </h5>
+            <textarea class="form-control" id="url" placeholder="https://drive.google.com song file share link goes here."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="songstart">Song Start Time (For TikTok, Spotify Song Previews)</label>
+            <h5>
+              This is optional if you want to retrive payments from what you earn (This can be changed.)
+            </h5>
+            <input type="text" class="form-control" id="songstart" placeholder="00:00:00">
+          </div>
+<hr>
+          <div class="form-group">
+            <label for="promo">Allow us to promote this song?</label>
+            <input type="text" id="promo" class="form-control" placeholder="Type Yes/No">
+          </div>
+          <div class="form-group">
+            <label for="bgrspot">Display this song in your BGR catalog spotlight?</label>
+            <input type="text" id="bgrspot" class="form-control" placeholder="Type Yes/No">
+          </div>
+          <div class="form-group">
+            <label for="ytlib">Add to YouTube song libary?</label>
+            <input type="text" id="ytlib" class="form-control" placeholder="Type Yes/No">
+          </div>
+          <div class="form-group">
+            <label for="cid">Content ID enabled for this song?</label>
+            <input type="text" id="cid" class="form-control" placeholder="Type Yes/No">
+          </div>
+          <div class="form-group">
+            <label for="publishes">Where shall we publish this song at?</label>
+            <textarea id="publishes" class="form-control"  placeholder="We select the following by default if this is blank: Spotify, Apple Music, Soundcloud, YouTube, YouTube Music, Amazon, Deezer, Boomplay, BG TUNES, Google Music, Itunes, Vevo (Needs extra approval), Facebook, TikTok, Anazon Music, IheartRadio, Instagram, Intagram Reels, BG Shorts"></textarea>
+          </div>
+          
+          <button type="submit" class="btn btn-primary addValue">Apply</button>
+        </form>
+
+        <h5>
+          Powered By BGR Forms | This Form is affiliated with BGR Forms.
+          <br>
+          <h6>
+            Making Form Management Easy.
+            <p>
+              BGR Forms is an super easy to use API founded by BGS LTD (BG Services LTD)
+              <br>
+              BGS aka BG Services is considered a well known service for creating over 100's of active free products such as BG-API, BG-F BG-Records, BG Radio, BG-Search +249 more fun, random, popular well used and active free products. .
+            </p>
+          </h6>
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) and Bootstrap -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!-- Include Firebase Library and Config-->
+  <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+  <!-- users Store JavaScript -->
+  <script src="https://bg-records.com/content.js"></script>
+</body>
+</html>
