@@ -1,0 +1,112 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<!-- Google Tag Manager -->
+<script>
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+    var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s),
+      dl = l != "dataLayer" ? "&l=" + l : "";
+    j.async = true;
+    j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+    f.parentNode.insertBefore(j, f);
+  })(window, document, "script", "dataLayer", "GTM-TVZNBT6");
+</script>
+<!-- End Google Tag Manager -->
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+/>
+<link rel="stylesheet" href="https://bgr.glitch.me/style.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<div class="header">
+  <a href="https://bgr.glitch.me/"
+    ><img
+      src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/BGRECORDS2.png?v=1677955982282"
+      height="80"
+      width="120"
+  /></a>
+</div>
+<h1>
+Hello, <span id="artist"></span>
+</h1>
+<h2>
+  <h1>Your Tiles:</h1>
+<hr>
+  <h2>
+    Music Artists:
+  </h2>
+  <button onclick="window.open('https://forms.gle/tti1NnXW2sjmGH8dA')">
+    Submit music to release
+  </button>
+  <button onclick="window.open('https://forms.gle/d8uN7eqx2zCdQDFw9')">
+    Modify Artist Settings
+  </button>
+<hr>
+  <h2>
+    Podcasters:
+  </h2>
+  <button onclick="window.open('https://forms.gle/AjgAVDWwUeT5UTTT8')">
+    Submit/Modify Show
+  </button>
+  <button onclick="window.open('https://forms.gle/c9nsvG7WfnU8xuUM7')">
+    Submit/Modify Episode
+  </button>
+  <hr>
+  <h2>
+    Artist Tools:
+  </h2>
+  <button onclick="window.open('https://forms.gle/fvn4zCuCVdPwLXrK8')">
+    I would like to pitch my album/ep to BGR.
+  </button>
+</h2>
+<script>
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var artist = parts[0];
+
+  document.getElementById("artist").innerHTML = artist;
+  document.title = "Dashboard";
+  
+if (parts[1] !== "success") {
+  window.location.replace('/')
+}
+</script>
+
+<style>
+  button {
+    background-color: darkblue;
+    color: white;
+    border: 2px solid cyan;
+    width: 190px;
+    height: 50px;
+    font-size: 15px;
+  }
+  button:hover {
+    background-color: blue;
+    color: white;
+    border: 4px solid cyan;
+    width: 190px;
+    height: 50px;
+    font-size: 14px;
+  }
+</style>
+
+<style>
+  .header {
+    border-radius: 20px;
+    padding: 20px;
+    width: 250x;
+    height: 90px;
+    text-align: center;
+    color: white;
+    background-color: #000000;
+  }
+  body {
+    background-color: lightgray;
+    text-align: center;
+  }
+</style>
