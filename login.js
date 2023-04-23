@@ -21,9 +21,6 @@ const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const main = document.getElementById("main");
 
-
-const returnBtn = document.getElementById("return-btn");
-
 var email, password;
 
 
@@ -35,7 +32,7 @@ submitButton.addEventListener("click", function() {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      window.location.replace('account#' + email + '#success')
+      window.location.replace('https://bg-records.com/account#' + email + '#success')
       // ...
     })
     .catch((error) => {
