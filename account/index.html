@@ -29,6 +29,22 @@
       width="120"
   /></a>
 </div>
+<script>
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var artist = parts[0];
+  var tmp = parts[1];
+  var login = parts[2];
+
+  document.getElementById("artist").innerHTML = artist;
+  document.getElementById("logintxt").innerHTML = login;
+  document.title = "Dashboard";
+  
+if (parts[1] !== "success") {
+  window.location.replace('/')
+}
+</script>
 <h1>
 Hello, <span id="artist"></span>
 </h1>
@@ -69,62 +85,11 @@ Hello, <span id="artist"></span>
   <button onclick="window.location.replace('https://bg-records.com/login')" class="btn-red">
     Logout
   </button>
-  <button id="deleteButton" class="btn-red">
+  <button onclick="window.location.replace('https://bg-records.com/artists/new/removal#' + artist)" class="btn-red">
     Delete Account
   </button>
 </h2>
-<script>
-  var type = window.location.hash.substr(1).replaceAll("%20", " ");
-  var parts = type.split("#");
 
-  var artist = parts[0];
-  var tmp = parts[1];
-  var login = parts[2];
-
-  document.getElementById("artist").innerHTML = artist;
-  document.getElementById("logintxt").innerHTML = login;
-  document.title = "Dashboard";
-  
-if (parts[1] !== "success") {
-  window.location.replace('/')
-}
-</script>
-
-  <script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
-import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBVduEn74v20V_WkrlH3vvFAXR6L6_vIYo",
-  authDomain: "bgr-login.firebaseapp.com",
-  projectId: "bgr-login",
-  storageBucket: "bgr-login.appspot.com",
-  messagingSenderId: "740972691618",
-  appId: "1:740972691618:web:00836c59f86b52ea7317fb",
-  measurementId: "G-RYKPY0QHLY"
-};
-
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth(app);
-
-const deleteButton = document.getElementById("deleteButton");
-
-
-deleteButton.addEventListener("click", function() {
-getAuth()
-  .deleteUser(login)
-  .then(() => {
-    console.log('Successfully deleted user');
-  })
-});
-
-
-
-
-
-</script>
 
 <style>
   button {
