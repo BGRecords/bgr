@@ -29,22 +29,6 @@
       width="120"
   /></a>
 </div>
-<script>
-  var type = window.location.hash.substr(1).replaceAll("%20", " ");
-  var parts = type.split("#");
-
-  var artist = parts[0];
-  var tmp = parts[1];
-  var login = parts[2];
-
-  document.getElementById("artist").innerHTML = artist;
-  document.getElementById("logintxt").innerHTML = login;
-  document.title = "Dashboard";
-  
-if (parts[1] !== "success") {
-  window.location.replace('/')
-}
-</script>
 <h1>
 Hello, <span id="artist"></span>
 </h1>
@@ -141,3 +125,20 @@ Hello, <span id="artist"></span>
     text-align: center;
   }
 </style>
+
+<script>
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var artist = parts[0];
+  var tmp = parts[1];
+  var login = parts[2];
+
+  document.getElementById("artist").innerHTML = artist;
+  document.getElementById("logintxt").innerHTML = login;
+  document.title = "Dashboard";
+  
+if (parts[1] !== "success") {
+  window.location.replace('/')
+}
+</script>
