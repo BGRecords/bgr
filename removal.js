@@ -12,10 +12,10 @@ firebase.initializeApp(firebaseConfig);
 
 //create firebase database reference
 var dbRef = firebase.database();
-var usersRef = dbRef.ref('removal');
+var removalRef = dbRef.ref('removal');
 
 //load older conatcts as well as any newly added one...
-usersRef.on("child_added", function(snap) {
+removalRef.on("child_added", function(snap) {
   $('#removal').append(contactHtmlFromObject(snap.val()));
 });
 
@@ -26,7 +26,7 @@ document.querySelector('.addValue')
     event.preventDefault();
     if( document.querySelector('#name').value != '' 
           || document.querySelector('#email').value != '' ){
-      usersRef.push({
+      removalRef.push({
         name: document.querySelector('#name').value,
         email: document.querySelector('#email').value,
         extras: document.querySelector('#reason').value,
