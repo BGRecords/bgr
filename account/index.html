@@ -90,7 +90,42 @@ if (parts[1] !== "success") {
 }
 </script>
 
-  <script type="module" src="https://bgr.glitch.me/paneldel.js"></script>
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBVduEn74v20V_WkrlH3vvFAXR6L6_vIYo",
+  authDomain: "bgr-login.firebaseapp.com",
+  projectId: "bgr-login",
+  storageBucket: "bgr-login.appspot.com",
+  messagingSenderId: "740972691618",
+  appId: "1:740972691618:web:00836c59f86b52ea7317fb",
+  measurementId: "G-RYKPY0QHLY"
+};
+
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const auth = getAuth(app);
+
+const deleteButton = document.getElementById("delete");
+
+
+
+
+function deleteacc() {
+const login = document.getElementById("logintxt").innerHTML;
+getAuth()
+  .deleteUser(login)
+  .then(() => {
+    console.log('Successfully deleted user');
+  })
+  .catch((error) => {
+    console.log('Error deleting user:', error);
+  });
+};
+</script>
 
 <style>
   button {
