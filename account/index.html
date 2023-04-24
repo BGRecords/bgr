@@ -69,7 +69,7 @@ Hello, <span id="artist"></span>
   <button onclick="window.location.replace('https://bg-records.com/login')" class="btn-red">
     Logout
   </button>
-  <button id="deleteButton" onclick="deleteacc();" class="btn-red">
+  <button id="deleteButton" class="btn-red">
     Delete Account
   </button>
 </h2>
@@ -112,16 +112,19 @@ const auth = getAuth(app);
 const deleteButton = document.getElementById("deleteButton");
 
 
-
-
-function deleteacc() {
+deleteButton.addEventListener("click", function() {
 const login = document.getElementById("logintxt").innerHTML;
 getAuth()
   .deleteUser(login)
   .then(() => {
     console.log('Successfully deleted user');
   })
-};
+});
+
+
+
+
+
 </script>
 
 <style>
