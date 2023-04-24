@@ -32,6 +32,7 @@
 <h1>
 Hello, <span id="artist"></span>
 </h1>
+<span id="logintxt"></span>
 <h2>
   <h1>Your Tiles:</h1>
 <hr>
@@ -68,8 +69,8 @@ Hello, <span id="artist"></span>
   <button onclick="window.location.replace('https://bg-records.com/login')" class="btn-red">
     Logout
   </button>
-  <button onclick="window.location.replace('https://bg-records.com/login')" class="btn-red" disabled>
-    Delete Account (N/A)
+  <button onclick="deleteacc()" class="btn-red">
+    Delete Account
   </button>
 </h2>
 <script>
@@ -77,14 +78,19 @@ Hello, <span id="artist"></span>
   var parts = type.split("#");
 
   var artist = parts[0];
+  var tmp = parts[1];
+  var login = parts[2];
 
   document.getElementById("artist").innerHTML = artist;
+  document.getElementById("logintxt").innerHTML = login;
   document.title = "Dashboard";
   
 if (parts[1] !== "success") {
   window.location.replace('/')
 }
 </script>
+
+  <script type="module" src="https://bgr.glitch.me/panel.js"></script>
 
 <style>
   button {
