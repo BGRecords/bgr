@@ -32,7 +32,7 @@ submitButton.addEventListener("click", function() {
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
-      window.location.replace('https://bg-records.com/account#' + email + '#success')
+      window.location.replace('https://bg-records.com/account#' + email + '#success#' + user.uid)
       // ...
     })
     .catch((error) => {
