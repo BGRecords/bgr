@@ -1,0 +1,70 @@
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <style type="text/css"> #removal p, #removal p.lead{ margin: 0; } </style>
+</head>
+<body>
+  <div class="container">
+    <h1>BGR Artist Form</h1>
+    <hr/>
+    <div class="row">
+      <div class="col-md-6">
+        <form method="post" name="contactForm">
+          <div class="form-group">
+            <label for="name">Artist Name*</label>
+            <input type="text" class="form-control" id="name" required placeholder="Enter Artist Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input type="email" class="form-control" id="email" required placeholder="Enter Email" disabled>
+          </div>
+          <div class="form-group">
+            <label for="reason">Artist Key*</label>
+            <input type="text" class="form-control" id="reason" required placeholder="Enter your artist key here.">
+          </div>
+          
+          <button type="submit" class="btn btn-primary addValue">Request Account Removal</button>
+        </form>
+
+        <h5>
+          Powered By BGR Forms | This Form is affiliated with BGR Forms.
+          <br>
+          <h6>
+            Making Form Management Easy.
+            <p>
+              BGR Forms is an super easy to use API founded by BGS LTD (BG Services LTD)
+              <br>
+              BGS aka BG Services is considered a well known service for creating over 100's of active free products such as BG-API, BG-F BG-Records, BG Radio, BG-Search +249 more fun, random, popular well used and active free products. .
+            </p>
+          </h6>
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) and Bootstrap -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!-- Include Firebase Library and Config-->
+  <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+  <!-- users Store JavaScript -->
+  <script src="https://bg-records.com/removal.js"></script>
+</body>
+</html>
+
+<script>
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var email = parts[0];
+  document.getElementById('email').value = email
+</script>
