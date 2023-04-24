@@ -113,7 +113,6 @@ const deleteButton = document.getElementById("deleteButton");
 
 
 deleteButton.addEventListener("click", function() {
-const login = document.getElementById("logintxt").innerHTML;
 getAuth()
   .deleteUser(login)
   .then(() => {
