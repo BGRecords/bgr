@@ -30,15 +30,8 @@ document.querySelector('.addValue')
         name: document.querySelector('#name').value,
         email: document.querySelector('#email').value,
         extras: document.querySelector('#reason').value,
-        artist: document.querySelector('#artist').value,
-        paypal: document.querySelector('#paypal').value,
-        promote: document.querySelector('#promo').value,
-        copyright: document.querySelector('#copyright').value,
-        oac: document.querySelector('#oac').value,
-        cid: document.querySelector('#cid').value,
-        artistkey: Math.floor(Math.random() * 999999) + 111111,
-        status: "Pending",
         secure: "true",
+        status: "Pending"
       });
       contactForm.reset();
       document.write('We will review your request very soon!')
@@ -55,14 +48,6 @@ function contactHtmlFromObject(contact){
       html += '<p class="lead">'+contact.name+' ('+ contact.artist +') </p>';
       html += '<p> Email: '+contact.email+'</p>';
       html += '<p> Extras: '+contact.extras+'</p>';
-      html += '<p> Artist Name: '+contact.artist+'</p>';
-      html += '<p> PayPal: '+contact.paypal+'</p>';
-      html += '<p> Artist Key: '+contact.artistkey+'</p>';
-      html += '<hr><p>Extra Options:</p>';
-      html += '<p> Allow Promotions: '+contact.promote+'</p>';
-      html += '<p> Allow Copyright: '+contact.copyright+'</p>';
-      html += '<p> Allow OAC: '+contact.oac+'</p>';
-      html += '<p> Allow Content ID: '+contact.cid+'</p>';
       html += '<hr><p>Moderation:</p>';
       html += '<p> Status: '+contact.status+'</p>';
       html += '<p> Secure: '+contact.secure+'</p>';
