@@ -32,7 +32,7 @@
 <h1>
 Hello, <span id="artist"></span>
 </h1>
-<span id="logintxt"></span>
+<span id="logintxt" hidden></span>
 <h2>
   <h1>Your Tiles:</h1>
 <hr>
@@ -69,7 +69,7 @@ Hello, <span id="artist"></span>
   <button onclick="window.location.replace('https://bg-records.com/login')" class="btn-red">
     Logout
   </button>
-  <button id="deleteButton" onclick="deleteacc()" class="btn-red">
+  <button id="deleteButton" onclick="deleteacc();" class="btn-red">
     Delete Account
   </button>
 </h2>
@@ -109,7 +109,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 
-const deleteButton = document.getElementById("delete");
+const deleteButton = document.getElementById("deleteButton");
 
 
 
@@ -121,9 +121,6 @@ getAuth()
   .then(() => {
     console.log('Successfully deleted user');
   })
-  .catch((error) => {
-    console.log('Error deleting user:', error);
-  });
 };
 </script>
 
