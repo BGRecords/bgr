@@ -1,13 +1,11 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyDJlV-wCAA4CQDG8cHAPsNB1IrRf7kq3uE",
-    authDomain: "bgrecords-bc005.firebaseapp.com",
-    databaseURL: "https://bgrecords-bc005-default-rtdb.firebaseio.com",
-    projectId: "bgrecords-bc005",
-    storageBucket: "bgrecords-bc005.appspot.com",
-    messagingSenderId: "392065069632",
-    appId: "1:392065069632:web:09e6fa179c1a1fce3265a5",
-    measurementId: "G-NPTLT89P0Q"
+  apiKey: "AIzaSyBxO_qfCLx4f1_Gl6UYVLsI5PixK3LkMEU",
+  authDomain: "bgr-api.firebaseapp.com",
+  databaseURL: "https://bgr-api-default-rtdb.firebaseio.com/",
+  projectId: "bgr-api",
+  storageBucket: "bgr-api.appspot.com",
+  messagingSenderId: "50853591148"
 };
 
 firebase.initializeApp(firebaseConfig);
