@@ -12,11 +12,11 @@ firebase.initializeApp(firebaseConfig);
 
 //create firebase database reference
 var dbRef = firebase.database();
-var usersRef = dbRef.ref('users');
+var songsRef = dbRef.ref('songs');
 
 //load older conatcts as well as any newly added one...
-usersRef.on("child_added", function(snap) {
-  $('#users').append(contactHtmlFromObject(snap.val()));
+songsRef.on("child_added", function(snap) {
+  $('#songs').append(contactHtmlFromObject(snap.val()));
 });
 
 
@@ -26,7 +26,7 @@ document.querySelector('.addValue')
     event.preventDefault();
     if( document.querySelector('#name').value != '' 
           || document.querySelector('#email').value != '' ){
-      usersRef.push({
+      songsRef.push({
         name: document.querySelector('#name').value,
         artist: document.querySelector('#artist').value,
         email: document.querySelector('#email').value,
