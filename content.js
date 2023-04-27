@@ -1,22 +1,24 @@
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBxO_qfCLx4f1_Gl6UYVLsI5PixK3LkMEU",
-  authDomain: "bgr-api.firebaseapp.com",
-  databaseURL: "https://bgr-api-default-rtdb.firebaseio.com/",
-  projectId: "bgr-api",
-  storageBucket: "bgr-api.appspot.com",
-  messagingSenderId: "50853591148"
+    apiKey: "AIzaSyDJlV-wCAA4CQDG8cHAPsNB1IrRf7kq3uE",
+    authDomain: "bgrecords-bc005.firebaseapp.com",
+    databaseURL: "https://bgrecords-bc005-default-rtdb.firebaseio.com",
+    projectId: "bgrecords-bc005",
+    storageBucket: "bgrecords-bc005.appspot.com",
+    messagingSenderId: "392065069632",
+    appId: "1:392065069632:web:09e6fa179c1a1fce3265a5",
+    measurementId: "G-NPTLT89P0Q"
 };
 
 firebase.initializeApp(firebaseConfig);
 
 //create firebase database reference
 var dbRef = firebase.database();
-var songsRef = dbRef.ref('songs');
+var usersRef = dbRef.ref('users');
 
 //load older conatcts as well as any newly added one...
-songsRef.on("child_added", function(snap) {
-  $('#songs').append(contactHtmlFromObject(snap.val()));
+usersRef.on("child_added", function(snap) {
+  $('#users').append(contactHtmlFromObject(snap.val()));
 });
 
 
@@ -26,7 +28,7 @@ document.querySelector('.addValue')
     event.preventDefault();
     if( document.querySelector('#name').value != '' 
           || document.querySelector('#email').value != '' ){
-      songsRef.push({
+      usersRef.push({
         name: document.querySelector('#name').value,
         artist: document.querySelector('#artist').value,
         email: document.querySelector('#email').value,
