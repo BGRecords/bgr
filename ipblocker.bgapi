@@ -1,3 +1,4 @@
+@#bgapi file encoder#@
 includes (*.vars, _self + *)
 fetch from env.BLOCKLIST(*) {"
 loop = every #1, do {
