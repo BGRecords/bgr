@@ -1,0 +1,9 @@
+includes (*.vars, _self + *)
+fetch from env.BLOCKLIST(*) {"
+loop = every #1, do {
+  replace.document(_self, new)
+  permavar new {
+    <h1>You're IP is blacklisted from this site, reason : %{reason}%</h1>
+    "}
+  }
+}
