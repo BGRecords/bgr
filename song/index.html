@@ -58,7 +58,7 @@
   </div>
 
   <div>
-    <h2>Lyrics</h2>
+    <h2 id="lyricshead">Lyrics</h2>
     <p id="lyrics">
       N/A
     </p>
@@ -107,6 +107,11 @@
   
   if (song === "get got") {
     document.getElementById('behindtrack').innerHTML = "i p***** my pants while making this"
+  }
+
+  if (song === "get got") {
+    document.getElementById('lyrics').innerHTML = ""
+    document.getElementById('lyricshead').innerHTML = ""
   }
 
   const artists = artist.split(",");
