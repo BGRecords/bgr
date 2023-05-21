@@ -53,7 +53,7 @@ function run() {
 var aname = document.getElementById('name').value
 var aitem = document.getElementById('item').value
 var akey = document.getElementById('key').value
-var akey = document.getElementById('email').value
+var aemail = document.getElementById('email').value
 var acomment = document.getElementById('comment').value
 if (typea.checked === true) {
   var type = "1"
@@ -88,6 +88,6 @@ if (yes.checked === true) {
 document.getElementById('output').innerHTML = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem + "#" + acomment
 document.getElementById('outputlink').href = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem + "#" + acomment
 document.getElementById('outputlink').innerHTML = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem
-document.getElementById('outputlinkemail').innerHTML = "mailto:" + email + "?subject? = BG Records | " + type + " was " + state
+document.getElementById('outputlinkemail').innerHTML = "mailto:" + aemail + "?subject? = BG Records | " + type + " was " + state
 }
 </script>
