@@ -137,7 +137,7 @@ document.querySelector('.addValue')
 //prepare conatct object's HTML
 function contactHtmlFromObject(contact){
   var html = '';
-  html += '<li class="list-group-item contact">';
+  html += '<li class="list-group-item contact" style="text-align: left;">';
     html += '<div>';
       html += '<p class="lead">'+contact.name;
       html += '<p>'+contact.comment+'</p>';
@@ -170,4 +170,3 @@ function contactHtmlFromObject(contact){
     text-align: center;
   }
 </style>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
