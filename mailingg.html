@@ -78,10 +78,10 @@ if (typeg.checked === true) {
 }
 
 if (no.checked === true) {
-  var state = "Declined"
+  var state = "1"
 }
 if (yes.checked === true) {
-  var state = "Approved"
+  var state = "2"
 }
 
 
@@ -108,10 +108,10 @@ if (typeg.checked === true) {
 }
 
 if (no.checked === true) {
-  var bstate = "1"
+  var bstate = "Declined"
 }
 if (yes.checked === true) {
-  var bstate = "2"
+  var bstate = "Approved"
 }
 
 
@@ -119,6 +119,6 @@ document.getElementById('output').innerHTML = "https://bg-records.com/mailing#" 
 document.getElementById('outputlink').href = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem + "#" + acomment
 document.getElementById('outputlink').innerHTML = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem
 document.getElementById('outputlinkemail').innerHTML = "mailto:" + aemail + "?subject? = BG Records&body = " + btype + " was " + bstate
-document.getElementById('outputlinkemail').href = "mailto:" + aemail + "?subject? = BG Records&body = " + btype + " was " + bstate
+document.getElementById('outputlinkemail').href = "mailto:" + aemail + "?subject? = BG Records&body=" + btype + "%20was%20" + bstate
 }
 </script>
