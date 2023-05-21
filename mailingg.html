@@ -78,10 +78,40 @@ if (typeg.checked === true) {
 }
 
 if (no.checked === true) {
-  var state = "1"
+  var state = "Declined"
 }
 if (yes.checked === true) {
-  var state = "2"
+  var state = "Approved"
+}
+
+
+if (typea.checked === true) {
+  var btype = "Song"
+}
+if (typeb.checked === true) {
+  var btype = "Podcast Show"
+}
+if (typec.checked === true) {
+  var btype = "Podcast Episode"
+}
+if (typed.checked === true) {
+  var btype = "Account"
+}
+if (typee.checked === true) {
+  var btype = "Account Removal"
+}
+if (typef.checked === true) {
+  var btype = "Pitch Request"
+}
+if (typeg.checked === true) {
+  var btype = "Profile Changes"
+}
+
+if (no.checked === true) {
+  var bstate = "1"
+}
+if (yes.checked === true) {
+  var bstate = "2"
 }
 
 
@@ -89,6 +119,6 @@ document.getElementById('output').innerHTML = "https://bg-records.com/mailing#" 
 document.getElementById('outputlink').href = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem + "#" + acomment
 document.getElementById('outputlink').innerHTML = "https://bg-records.com/mailing#" + aname + "#" + type + "#" + state + "#" + akey + "#" + aitem
 document.getElementById('outputlinkemail').innerHTML = "mailto:" + aemail + "?subject? = BG Records | " + type + " was " + state
-document.getElementById('outputlinkemail').href = "mailto:" + aemail + "?subject? = BG Records | " + type + " was " + state
+document.getElementById('outputlinkemail').href = "mailto:" + aemail + "?subject? = BG Records | " + btype + " was " + bstate
 }
 </script>
