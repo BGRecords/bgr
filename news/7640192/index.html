@@ -89,7 +89,7 @@
   <!-- Include Firebase Library and Config-->
   <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
   <!-- users Store JavaScript -->
-  <script>
+  <!--<script>
     var postid="7640192"
     
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -146,8 +146,11 @@ function contactHtmlFromObject(contact){
   html += '<br>';
   return html;
 }
+  </script>-->
+  <p id="commentjs" class="commentjs"></p>
+  <script>
+    $("#commentjs").load("https://bg-records.com/news/7640192/comments.html#" + 7640192);
   </script>
-
 
 
 
