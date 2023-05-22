@@ -20,10 +20,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-  var type = window.location.pathname.substr(1).replaceAll("%20", " ").replaceAll("/","");
-  var parts = type.split("/");
-
-  var postid = parts[1];
+  var postid = ""
   
   
 //create firebase database reference
