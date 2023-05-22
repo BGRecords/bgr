@@ -138,7 +138,7 @@ function contactHtmlFromObject(contact){
   var html = '';
   html += '<li class="list-group-item contact" style="text-align: left; background-color: silver;">';
     html += '<div>';
-      html += '<p class="lead">'+contact.name + '<span style="background-color:white; font-size: 20px;" class="userbadge">' + contact.cert + '</span>'
+      html += '<p class="lead">'+contact.name + '<span style="background-color:white; font-size: 20px; position: relative; right: 40px;" class="userbadge">' + contact.cert + '</span>'
       html += '<p>❛'+contact.comment+'❜</p>';
     html += '</div>';
   html += '</li>';
@@ -165,6 +165,7 @@ function contactHtmlFromObject(contact){
     text-align: center;
   }
   .userbadge {
-    right: 40%
+    position: relative;
+    right: 40px;
   }
 </style>
