@@ -124,6 +124,7 @@ document.querySelector('.addValue')
       podcastepsRef.push({
         name: document.querySelector('#name').value,
         comment: document.querySelector('#comment').value,
+        cert: "Guest",
         status: "Posted",
       });
       contactForm.reset();
@@ -137,7 +138,7 @@ function contactHtmlFromObject(contact){
   var html = '';
   html += '<li class="list-group-item contact" style="text-align: left; background-color: silver;">';
     html += '<div>';
-      html += '<p class="lead">'+contact.name;
+      html += '<p class="lead">'+contact.name + '<span style="background-color:white; font-size: 20px">' + contact.cert + '</span>'
       html += '<p>❛'+contact.comment+'❜</p>';
     html += '</div>';
   html += '</li>';
