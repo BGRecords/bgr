@@ -1,57 +1,12 @@
-
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-</head>
-
-
-
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://bg-records.com/css/main.css">
-  <style type="text/css"> #comments p, #comments p.lead{ margin: 0; } </style>
-</head>
-<body>
-  <div class="container" style="text-align: center;">
-    <hr/>
-    <div class="row">
-      <div class="col-md-3">
-        <form method="post" name="contactForm">
-          <div class="form-group">
-            <label for="name"></label>
-            <input type="text" class="form-control" id="name" required placeholder="Display Name">
-          </div>
-          <div class="form-group">
-            <label for="artist"></label>
-            <input type="text" class="form-control" id="comment" required placeholder="Comment">
-          </div>
-          <p>
-            Inappropriate comments will be banned.
-          </p>
-          
-          <button type="submit" class="btn btn-primary addValue">Add Comment</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-
-        <ul id="comments" class="list-group">
-          <!-- GENERATE HERE -->
-        </ul>
-
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) and Bootstrap -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <!-- Include Firebase Library and Config-->
   <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-  <!-- users Store JavaScript -->
-  <script>
-    var postid="7640192"
-    
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+</head>
+
+<script>
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBxO_qfCLx4f1_Gl6UYVLsI5PixK3LkMEU",
     authDomain: "bgr-api.firebaseapp.com",
@@ -65,7 +20,12 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
 
+  var postid = parts[0];
+  
+  
 //create firebase database reference
 var dbRef = firebase.database();
 var podcastepsRef = dbRef.ref('comments/post/' + postid);
@@ -88,7 +48,6 @@ document.querySelector('.addValue')
         status: "Posted",
       });
       contactForm.reset();
-      document.write('We will review your request very soon!')
     } else {
       alert('Please complete the form!');
     }
@@ -97,16 +56,13 @@ document.querySelector('.addValue')
 //prepare conatct object's HTML
 function contactHtmlFromObject(contact){
   var html = '';
-  html += '<li class="list-group-item contact">';
+  html += '<li class="list-group-item contact" style="text-align: left; background-color: silver;">';
     html += '<div>';
       html += '<p class="lead">'+contact.name;
-      html += '<p>'+contact.comment+'</p>';
+      html += '<p>❛'+contact.comment+'❜</p>';
     html += '</div>';
   html += '</li>';
   html += '<br>';
   return html;
 }
-  </script>
-
-
-
+</script>
