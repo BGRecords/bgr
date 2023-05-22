@@ -136,9 +136,9 @@ document.querySelector('.addValue')
 //prepare conatct object's HTML
 function contactHtmlFromObject(contact){
   var html = '';
-  html += '<li class="list-group-item contact" style="text-align: center; background-color: silver;">';
+  html += '<li class="list-group-item contact" style="text-align: left; background-color: silver;">';
     html += '<div>';
-      html += '<p class="lead">'+contact.name + '<span style="background-color:white; font-size: 20px">' + contact.cert + '</span>'
+      html += '<p class="lead">'+contact.name + '<span style="background-color:white; font-size: 20px; text-align: center;">' + contact.cert + '</span>'
       html += '<p>❛'+contact.comment+'❜</p>';
     html += '</div>';
   html += '</li>';
