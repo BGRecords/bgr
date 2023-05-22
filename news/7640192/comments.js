@@ -1,11 +1,11 @@
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-</head>
+//<head>
+//  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+//  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+//  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+//  <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+//</head>
 
-<script>
+//<script>
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: "AIzaSyBxO_qfCLx4f1_Gl6UYVLsI5PixK3LkMEU",
@@ -20,10 +20,10 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-  var type = window.location.hash.substr(1).replaceAll("%20", " ");
-  var parts = type.split("#");
+  var type = window.location.pathname.substr(1).replaceAll("%20", " ").replaceAll("/","");
+  var parts = type.split("/");
 
-  var postid = parts[0];
+  var postid = parts[1];
   
   
 //create firebase database reference
@@ -65,4 +65,4 @@ function contactHtmlFromObject(contact){
   html += '<br>';
   return html;
 }
-</script>
+//</script>
