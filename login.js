@@ -38,6 +38,6 @@ submitButton.addEventListener("click", function() {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      window.alert("Error occurred. Try again.");
+      window.alert("Error Code: " + errorCode + " Error: " + errorMessage + " Contact us if you think this is an error or an mistake.");
     });
 });
