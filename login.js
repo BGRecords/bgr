@@ -38,7 +38,7 @@ submitButton.addEventListener("click", function() {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-          if (errorMessage === "auth/user-disabled") {
+          if (errorCode === "auth/user-disabled") {
           document.write("Hello!, Your BG Records Artist account has been banned for violating our policies. <br> Please contact bans@bg-records.com if you belive this is a mistake (Please send the email using the email your BG Records account is registered on)");
           }
       window.alert("Error Code: " + errorCode + " Error: " + errorMessage + " Contact us if you think this is an error or an mistake.");
