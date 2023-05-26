@@ -51,7 +51,7 @@ usersRef.on("child_added", function(snap) {
 //prepare conatct object's HTML
 function contactHtmlFromObject(contact){
       console.log(contact.artistname);
-    })
+    )
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
