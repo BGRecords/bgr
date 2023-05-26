@@ -41,7 +41,7 @@ var usersRef = dbRef.ref('accounts/' + user.uid);
 
 //load older conatcts as well as any newly added one...
 usersRef.on("child_added", function(snap) {
-  contactHtmlFromObject(snap.val()));
+  contactHtmlFromObject(snap.val());
 });
 
 
