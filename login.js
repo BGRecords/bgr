@@ -34,23 +34,6 @@ submitButton.addEventListener("click", function() {
       const user = userCredential.user;
       window.location.replace('https://bg-records.com/account#' + email + '#success#' + user.uid)
       // ...
-
-//create firebase database reference
-var dbRef = firebase.database();
-var usersRef = dbRef.ref('accounts/' + user.uid);
-
-//load older conatcts as well as any newly added one...
-usersRef.on("child_added", function(snap) {
-  contactHtmlFromObject(snap.val());
-});
-
-
-//save contact
-
-
-//prepare conatct object's HTML
-function contactHtmlFromObject(contact){
-      console.log(contact.artistname)
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -59,4 +42,4 @@ function contactHtmlFromObject(contact){
           }
       window.alert("Error Code: " + errorCode + " Error: " + errorMessage + " Contact us if you think this is an error or an mistake.");
     });
-};
+});
