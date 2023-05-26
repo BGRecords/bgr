@@ -59,4 +59,4 @@ function contactHtmlFromObject(contact){
           }
       window.alert("Error Code: " + errorCode + " Error: " + errorMessage + " Contact us if you think this is an error or an mistake.");
     });
-});
+};
