@@ -34,6 +34,7 @@ submitButton.addEventListener("click", function() {
       const user = userCredential.user;
       window.location.replace('https://bg-records.com/account#' + email + '#success#' + user.uid)
       // ...
+    })
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
