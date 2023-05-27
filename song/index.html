@@ -55,7 +55,7 @@
   <br>
    <span id="duration" class="time">00:00</span> | <span id="durationremain" class="time">00:00</span> | <input type="range" id="seek-slider" max="100" value="0">
   <br>
-   <output id="volume-output">100% | </output><input type="range" id="volume-slider" max="100" value="100"><button onclick="toggleMute();"><image src="https://bg-records.com/ui/sound-on.png" width="20px" id="mutebutton"></image></button>
+   <output id="volume-output">100% | </output><input type="range" id="volume-slider" max="100" value="100"><button onclick="toggleMute();"><image src="https://bg-records.com/ui/sound-on.png" width="20px" id="mutebutton"></image></button> <button onclick="toggleLoop();"><image src="https://bg-records.com/ui/loop-off.png" width="20px" id="loopbutton"></image></button>
 </div>
 
 
@@ -220,6 +220,7 @@ button:hover {
 <script>
 var isPlaying = false
 var isMuted = false
+var isLooped = false
 
 function togglePlay() {
   if (isPlaying === false) {
@@ -250,7 +251,19 @@ function toggleMute() {
   }
 }
 
-
+function toggleLoop() {
+  if (isLooped === false) {
+      document.getElementById('loopbutton').src = "https://bg-records.com/ui/loop-on.png"
+    document.getElementById('playerbase').loop = true
+      isLooped = true
+  } 
+  
+  else {
+     document.getElementById('loopbutton').src = "https://bg-records.com/ui/loop-off.png"
+    document.getElementById('playerbase').loop = false
+    isLooped = false
+  }
+}
 
 
 
