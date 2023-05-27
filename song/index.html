@@ -209,14 +209,13 @@ button:hover {
 </style>
 
 <script>
+  var player = "document.getElementById('player')"
   player.addEventListener("loadedmetadata", function () {
     if (player.buffered.length === 0) return;
 
     const bufferedSeconds = player.buffered.end(0) - player.buffered.start(0);
     console.log(`${bufferedSeconds} seconds of player are ready to play.`);
-
-
-    var isPlaying = false
+var isPlaying = false
 var isMuted = false
 
 function togglePlay() {
@@ -295,8 +294,6 @@ function sToTime(t) {
 function padZero(v) {
   return (v < 10) ? "0" + v : v;
 }
-    
-    
   });
 </script>
 
