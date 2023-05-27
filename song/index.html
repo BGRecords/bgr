@@ -58,87 +58,7 @@
    <output id="volume-output">100% | </output><input type="range" id="volume-slider" max="100" value="100"><button onclick="toggleMute();"><image src="https://bg-records.com/ui/sound-on.png" width="20px" id="mutebutton"></image></button>
 </div>
 
-<script>
-var isPlaying = false
-var isMuted = false
 
-function togglePlay() {
-  if (isPlaying === false) {
-      document.getElementById('playbutton').src = "https://bg-records.com/ui/pause.png"
-    document.getElementById('playerbase').play()
-      isPlaying = true
-  } 
-  
-  else {
-     document.getElementById('playbutton').src = "https://bg-records.com/ui/play.png"
-    document.getElementById('playerbase').pause()
-    isPlaying = false
-  }
-}
-
-
-function toggleMute() {
-  if (isMuted === false) {
-      document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-off.png"
-    document.getElementById('playerbase').muted = true
-      isMuted = true
-  } 
-  
-  else {
-     document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-on.png"
-    document.getElementById('playerbase').muted = false
-    isMuted = false
-  }
-}
-
-
-
-
-
-let aud = document.getElementById("playerbase");
-
-aud.ontimeupdate = function() {change()};
-
-function change() {
-  document.getElementById('duration').innerHTML = sToTime(document.getElementById('playerbase').currentTime)
-  document.getElementById('seek-slider').value = document.getElementById('playerbase').currentTime
-  document.getElementById('seek-slider').max = document.getElementById('playerbase').duration
-  document.getElementById('durationremain').innerHTML = sToTime(document.getElementById('playerbase').duration)
-}
-
-let auda = document.getElementById("playerbase");
-var slider = document.getElementById('seek-slider');
-slider.addEventListener('input', sliderChange);
-
-function sliderChange() {
-  auda.currentTime = slider.value
-}
-
-let audb = document.getElementById("playerbase");
-let audiodisplay = document.getElementById("volume-output");
-var slidera = document.getElementById('volume-slider');
-slidera.addEventListener('input', slideraChange);
-
-function slideraChange() {
-  audb.volume = slidera.value / 100
-  audiodisplay.innerHTML = slidera.value + "%"
-  
-  if (slidera.value === "0") {
-    document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-off.png"
-  } 
-  else {
-     document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-on.png"
-  }
-}
-
-function sToTime(t) {
-  return padZero(parseInt((t / (60)) % 60)) + ":" + 
-         padZero(parseInt((t) % 60));
-}
-function padZero(v) {
-  return (v < 10) ? "0" + v : v;
-}
-</script>
 
 <style>
 button {
@@ -295,4 +215,86 @@ button:hover {
     const bufferedSeconds = player.buffered.end(0) - player.buffered.start(0);
     console.log(`${bufferedSeconds} seconds of player are ready to play.`);
   });
+</script>
+
+<script>
+var isPlaying = false
+var isMuted = false
+
+function togglePlay() {
+  if (isPlaying === false) {
+      document.getElementById('playbutton').src = "https://bg-records.com/ui/pause.png"
+    document.getElementById('playerbase').play()
+      isPlaying = true
+  } 
+  
+  else {
+     document.getElementById('playbutton').src = "https://bg-records.com/ui/play.png"
+    document.getElementById('playerbase').pause()
+    isPlaying = false
+  }
+}
+
+
+function toggleMute() {
+  if (isMuted === false) {
+      document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-off.png"
+    document.getElementById('playerbase').muted = true
+      isMuted = true
+  } 
+  
+  else {
+     document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-on.png"
+    document.getElementById('playerbase').muted = false
+    isMuted = false
+  }
+}
+
+
+
+
+
+let aud = document.getElementById("playerbase");
+
+aud.ontimeupdate = function() {change()};
+
+function change() {
+  document.getElementById('duration').innerHTML = sToTime(document.getElementById('playerbase').currentTime)
+  document.getElementById('seek-slider').value = document.getElementById('playerbase').currentTime
+  document.getElementById('seek-slider').max = document.getElementById('playerbase').duration
+  document.getElementById('durationremain').innerHTML = sToTime(document.getElementById('playerbase').duration)
+}
+
+let auda = document.getElementById("playerbase");
+var slider = document.getElementById('seek-slider');
+slider.addEventListener('input', sliderChange);
+
+function sliderChange() {
+  auda.currentTime = slider.value
+}
+
+let audb = document.getElementById("playerbase");
+let audiodisplay = document.getElementById("volume-output");
+var slidera = document.getElementById('volume-slider');
+slidera.addEventListener('input', slideraChange);
+
+function slideraChange() {
+  audb.volume = slidera.value / 100
+  audiodisplay.innerHTML = slidera.value + "%"
+  
+  if (slidera.value === "0") {
+    document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-off.png"
+  } 
+  else {
+     document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-on.png"
+  }
+}
+
+function sToTime(t) {
+  return padZero(parseInt((t / (60)) % 60)) + ":" + 
+         padZero(parseInt((t) % 60));
+}
+function padZero(v) {
+  return (v < 10) ? "0" + v : v;
+}
 </script>
