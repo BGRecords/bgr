@@ -155,19 +155,19 @@ usersRefb.on("child_added", function(snapc) {
 
 //prepare conatct object's HTML
 function contactHtmlFromObject(contact){
-  var html = '';
-  html += '<li style="text-align: center; background-color: silver;">';
-    html += '<div>';
-      html += '<p class="lead">'+contact.Song+'</p>';
-      html += '<p> Album: '+contact.Album+'</p>';
-      html += '<p> Year: '+contact.Year+'</p>';
-      html += '<p> Copyrighted: '+contact.Copyright+'</p>';
-      html += '<p> Song ISRC: '+contact.ISRC+'</p>';
-      html += '<p> Album UPC: '+contact.UPC+'</p>';
-    html += '</div>';
-  html += '</li>';
-  html += '<br>';
-  return html;
+  var htmlb = '';
+  htmlb += '<li style="text-align: center; background-color: silver;">';
+    htmlb += '<div>';
+      htmlb += '<p class="lead">'+contact.Song+'</p>';
+      htmlb += '<p> Album: '+contact.Album+'</p>';
+      htmlb += '<p> Year: '+contact.Year+'</p>';
+      htmlb += '<p> Copyrighted: '+contact.Copyright+'</p>';
+      htmlb += '<p> Song ISRC: '+contact.ISRC+'</p>';
+      htmlb += '<p> Album UPC: '+contact.UPC+'</p>';
+    htmlb += '</div>';
+  htmlb += '</li>';
+  htmlb += '<br>';
+  return htmlb;
 }
 </script>
 
