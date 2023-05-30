@@ -91,6 +91,161 @@ Hello, <span id="artist"></span>
     Account:
   </h2>
   <button onclick="window.location.replace('https://bg-records.com/login')" class="btn-red">
+45
+</h1>
+46
+<span>DO NOT SHARE THIS CODE:<span id="logintxt"></span> | This code is used for extra services that acts like a login.</span>
+47
+<h2>
+48
+  <h1>Your Tiles:</h1>
+49
+<hr>
+50
+  <h2>
+51
+    Artist Services:
+52
+  </h2>
+53
+  <button onclick="window.open('https://bg-records.com/artistaddress/')" class="btn-purple">
+54
+    Inbox
+55
+  </button>
+56
+  <button onclick="window.open('https://bg-records.com/contentidmanage/')" class="btn-purple">
+57
+    Content ID Settings
+58
+  </button>
+59
+  <button onclick="window.open('https://bg-records.com/youtubenetwork/')" class="btn-purple">
+60
+    Join YT Rights Management
+61
+  </button>
+62
+<hr>
+63
+  <h2>
+64
+    Music Artists:
+65
+  </h2>
+66
+  <button onclick="window.open('https://bg-records.com/artists/new/song/')">
+67
+    Submit music to release
+68
+  </button>
+69
+  <button onclick="window.open('https://bg-records.com/artists/new/modify/')">
+70
+    Modify Artist Settings
+71
+  </button>
+72
+<hr>
+73
+  <h2>
+74
+    Podcasters:
+75
+  </h2>
+76
+  <button onclick="window.open('https://bg-records.com/artists/new/podcast/')">
+77
+    Submit/Modify Show
+78
+  </button>
+79
+  <button onclick="window.open('https://bg-records.com/artists/new/podcastep/')">
+80
+    Submit/Modify Episode
+81
+  </button>
+82
+  <hr>
+83
+  <h2>
+84
+    Artist Tools:
+85
+  </h2>
+86
+  <button onclick="window.open('https://bg-records.com/artists/new/song/')">
+87
+    I would like to pitch my album/ep to BGR.
+88
+  </button>
+89
+  <hr>
+90
+  <h2>
+91
+    Account:
+92
+  </h2>
+93
+  <button onclick="window.location.replace('https://bg-records.com/login')" class="btn-red">
+94
+    Logout
+95
+  </button>
+96
+  <button onclick="window.location.replace('https://bg-records.com/artists/new/removal#' + artist)" class="btn-red">
+97
+    Delete Account
+98
+  </button>
+99
+</h2>
+100
+<hr>
+101
+​
+102
+​
+103
+      <div class="col-md-4" style="text-align: center; max-height: 500px;">
+104
+        <h1>Approved Content (by you):</h1>
+105
+        <hr>
+106
+        <ul id="users" class="list-group" style="text-align: center; max-height: 500px; overflow-y: auto;">
+107
+     <li style="text-align: center; background-color: darkgray;">
+108
+    <div>
+109
+      <p class="lead">NOTICE:</p>
+110
+      <p>This fearure is still in beta and may take a few weeks for everything to display.</p>
+111
+  </div>
+112
+</li>
+113
+<br>
+114
+        </ul>
+115
+      </div>
+116
+<br>
+117
+<br>
+118
+<br>
+119
+<br>
+120
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) and Bootstrap -->
+121
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
     Logout
   </button>
   <button onclick="window.location.replace('https://bg-records.com/artists/new/removal#' + artist)" class="btn-red">
@@ -280,60 +435,7 @@ function contactHtmlFromObject(contact){
   </div>
 <br>
 
-      <div class="col-md-4" style="text-align: center; max-height: 500px;">
-        <h1>Profiles you manage:</h1>
-        <hr>
-        <ul id="profiles" class="list-group" style="text-align: center; max-height: 500px; overflow-y: auto;">
-     <li style="text-align: center; background-color: darkgray;">
-    <div>
-      <p class="lead">NOTICE:</p>
-      <p>This fearure is still in beta and may take a few weeks for everything to display.</p>
-  </div>
-</li>
-<br>
-        </ul>
-      </div>
-<br>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) and Bootstrap -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <!-- Include Firebase Library and Config-->
-  <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
-  <!-- users Store JavaScript -->
-<script>
-  var type = window.location.hash.substr(1).replaceAll("%20", " ");
-  var parts = type.split("#");
 
-  var key = parts[2];
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
-firebase.initializeApp(firebaseConfig);
-
-//create firebase database reference
-var dbRef = firebase.database();
-var usersRef = dbRef.ref('key/' + key + '/profiles/');
-
-//load older conatcts as well as any newly added one...
-usersRef.on("child_added", function(snap) {
-  $('#profiles').append(contactHtmlFromObject(snap.val()));
-});
-
-
-
-//prepare conatct object's HTML
-function contactHtmlFromObject(contactb){
-  var html = '';
-  html += '<li style="text-align: center; background-color: silver;">';
-    html += '<div>';
-      html += '<p class="lead">'+contactb.Name+'</p>';
-      html += '<p> Type: '+contactb.Cert+'</p>';
-      html += '<p> Access Level: '+contactb.Level+'</p>';
-    html += '</div>';
-  html += '</li>';
-  html += '<br>';
-  return html;
-}
-</script>
 
 <style>
   .container {
