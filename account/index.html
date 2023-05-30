@@ -318,13 +318,13 @@ usersRef.on("child_added", function(snap) {
 
 
 //prepare conatct object's HTML
-function contactHtmlFromObject(contact){
+function contactHtmlFromObject(contactb){
   var html = '';
   html += '<li style="text-align: center; background-color: silver;">';
     html += '<div>';
-      html += '<p class="lead">'+contact.Name+'</p>';
-      html += '<p> Type: '+contact.Cert+'</p>';
-      html += '<p> Access Level: '+contact.Level+'</p>';
+      html += '<p class="lead">'+contactb.Name+'</p>';
+      html += '<p> Type: '+contactb.Cert+'</p>';
+      html += '<p> Access Level: '+contactb.Level+'</p>';
     html += '</div>';
   html += '</li>';
   html += '<br>';
