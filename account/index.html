@@ -100,8 +100,8 @@ Hello, <span id="artist"></span>
 <hr>
 
 <h1>Approved Content (by you):</h1>
-      <div class="col-md-6">
-        <ul id="users" class="list-group">
+      <div class="col-md-6" style="text-align: center;">
+        <ul id="users" class="list-group" style="text-align: center;">
         </ul>
       </div>
 
@@ -144,7 +144,7 @@ usersRef.on("child_added", function(snap) {
 //prepare conatct object's HTML
 function contactHtmlFromObject(contact){
   var html = '';
-  html += '<li style="text-align: center;">';
+  html += '<li style="text-align: center; background-color: silver;">';
     html += '<div>';
       html += '<p class="lead">'+contact.Song+' ('+ contact.Artist +') </p>';
       html += '<p> Album: '+contact.Album+'</p>';
