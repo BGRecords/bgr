@@ -280,7 +280,7 @@ function contactHtmlFromObject(contact){
       <div class="col-md-4" style="text-align: center; max-height: 500px;">
         <h1>Profiles you manage:</h1>
         <hr>
-        <ul id="users" class="list-group" style="text-align: center; max-height: 500px; overflow-y: auto;">
+        <ul id="usersb" class="list-group" style="text-align: center; max-height: 500px; overflow-y: auto;">
      <li style="text-align: center; background-color: darkgray;">
     <div>
       <p class="lead">NOTICE:</p>
@@ -322,7 +322,7 @@ var usersRef = dbRef.ref('key/' + key + '/profiles/');
 
 //load older conatcts as well as any newly added one...
 usersRef.on("child_added", function(snap) {
-  $('#users').append(contactHtmlFromObject(snap.val()));
+  $('#usersb').append(contactHtmlFromObject(snap.val()));
 });
 
 
