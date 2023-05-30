@@ -147,8 +147,8 @@ var dbRefb = firebase.database();
 var usersRefb = dbRefb.ref('key/' + key + '/songs/');
 
 //load older conatcts as well as any newly added one...
-usersRefb.on("child_added", function(snap) {
-  $('#users').append(contactHtmlFromObject(snap.val()));
+usersRefb.on("child_added", function(snapc) {
+  $('#users').append(contactHtmlFromObject(snapc.val()));
 });
 
 
