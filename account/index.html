@@ -146,13 +146,11 @@ function contactHtmlFromObject(contact){
   var html = '';
   html += '<li style="text-align: center; background-color: silver;">';
     html += '<div>';
-      html += '<p class="lead">'+contact.Song+' ('+ contact.Artist +') </p>';
+      html += '<p class="lead">'+contact.Song'</p>';
       html += '<p> Album: '+contact.Album+'</p>';
       html += '<p> Year: '+contact.Year+'</p>';
-      html += '<hr><p>Advanced:</p>';
-      html += '<p> Copyrighted: '+contact.Copyright+'</p>';
+      html += '<p> Copyrighted: '+contact.Copyright'</p>';
       html += '<p> Song ISRC: '+contact.ISRC+'</p>';
-      html += '<hr><p>Advanced (ALBUM):</p>';
       html += '<p> Album UPC: '+contact.UPC+'</p>';
     html += '</div>';
   html += '</li>';
