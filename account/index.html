@@ -143,11 +143,11 @@ Hello, <span id="artist"></span>
 firebase.initializeApp(firebaseConfig);
 
 //create firebase database reference
-var dbRef = firebase.database();
-var usersRef = dbRef.ref('key/' + key + '/songs/');
+var dbRefb = firebase.database();
+var usersRefb = dbRefb.ref('key/' + key + '/songs/');
 
 //load older conatcts as well as any newly added one...
-usersRef.on("child_added", function(snap) {
+usersRefb.on("child_added", function(snap) {
   $('#users').append(contactHtmlFromObject(snap.val()));
 });
 
