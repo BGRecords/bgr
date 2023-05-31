@@ -327,19 +327,19 @@ var usersRefc = dbRefc.ref('key/' + key + '/profiles/');
 
 //load older conatcts as well as any newly added one...
 usersRefc.on("child_added", function(snapc) {
-  $('#profiles').append(contactHtmlFromObject(snapc.val()));
+  $('#profiles').append(contactHtmlFromObjectc(snapc.val()));
 });
 
 
 
 //prepare conatct object's HTML
-function contactHtmlFromObject(contact){
+function contactHtmlFromObjectc(contactr){
   var html = '';
   html += '<li style="text-align: center; background-color: silver;">';
     html += '<div>';
-      html += '<p class="lead">'+contact.Name+'</p>';
-      html += '<p> Type: '+contact.Cert+'</p>';
-      html += '<p> Access Level: '+contact.Level+'</p>';
+      html += '<p class="lead">'+contactr.Name+'</p>';
+      html += '<p> Type: '+contactr.Cert+'</p>';
+      html += '<p> Access Level: '+contactr.Level+'</p>';
     html += '</div>';
   html += '</li>';
   html += '<br>';
