@@ -302,13 +302,24 @@ function contactHtmlFromObject(contact){
   <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
   <!-- users Store JavaScript -->
 <script>
+  
+    const firebaseConfig2 = {
+    apiKey: "AIzaSyBkFMScThR9gMEYCBvsd8kDSOnE9lR0q5E",
+    authDomain: "bgr-song-database.firebaseapp.com",
+    databaseURL: "https://bgr-song-database-default-rtdb.firebaseio.com",
+    projectId: "bgr-song-database",
+    storageBucket: "bgr-song-database.appspot.com",
+    messagingSenderId: "1032475950224",
+    appId: "1:1032475950224:web:06551b463029b44a2d2c15",
+    measurementId: "G-2TRRCW4HNY"
+  };
   var type = window.location.hash.substr(1).replaceAll("%20", " ");
   var parts = type.split("#");
 
   var key = parts[2];
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
-firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig2);
 
 //create firebase database reference
 var dbRefc = firebase.database();
