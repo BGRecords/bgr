@@ -1,1 +1,170 @@
 
+<link rel="stylesheet" href="https://bgr.glitch.me/style2.css" />
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<span id="head"></span>
+<div class="header">
+  <a href="https://bg-records.com/"
+    ><img
+      src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/BGRECORDS2.png?v=1677955982282"
+      height="80"
+      width="120"
+  /></a>
+</div>
+
+<h1>
+  <span style="background-color:white; font-size: 20px" id="formtag">UPDATES</span> June Changelog.
+</h1>
+<h2>
+  Recent Site Changes:
+</h2>
+<h3>
+  <h4>
+    <span>Artist profile changes:</span>
+    <span style="background-color:green; font-size: 20px">ADDED</span> | List of approved items (Tracks, Movies, Podcasts, ect)
+    <span style="background-color:green; font-size: 20px">ADDED</span> | List of profiles managed (This displays author names you own)
+    <span>Music player changes:</span>
+    <span style="background-color:orange; font-size: 20px">UPDATED</span> | Music player on song pages has been re-coded.
+    <span style="background-color:green; font-size: 20px">ADDED</span> | Toggle loop button.
+    <span>Other:</span>
+    <span style="background-color:red; font-size: 20px">FIXED</span> | Site should support more device screens.
+  </h4>
+</h3>
+
+<hr>
+<footer>
+<span>Article written by Admin</span>
+<br>
+<br>
+  <div class="commentse" id="commentse"></div>
+  <script>
+  //$("#commentse").load("https://bg-records.com/news/7640192/comments.html");
+  </script>
+  
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+
+
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://bg-records.com/css/main.css">
+  <style type="text/css"> #comments p, #comments p.lead{ margin: 0; } </style>
+</head>
+<body>
+  <div class="container" style="text-align: center;">
+    <hr/>
+    <div class="row">
+      <div class="col-md-3">
+        <form method="post" name="contactForm">
+          <div class="form-group">
+            <label for="name"></label>
+            <input type="text" class="form-control" id="name" required placeholder="Display Name">
+          </div>
+          <div class="form-group">
+            <label for="artist"></label>
+            <input type="text" class="form-control" id="comment" required placeholder="Comment">
+          </div>
+          <p>
+            Inappropriate comments will be banned.
+          </p>
+          
+          <button type="submit" class="btn btn-primary addValue">Add Comment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+        <ul id="comments" class="list-group">
+          <!-- GENERATE HERE -->
+        </ul>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) and Bootstrap -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!-- Include Firebase Library and Config-->
+  <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+  <!-- users Store JavaScript -->
+  <script>
+    var postid="6298457"
+    
+  const firebaseConfig = {
+    apiKey: "AIzaSyBxO_qfCLx4f1_Gl6UYVLsI5PixK3LkMEU",
+    authDomain: "bgr-api.firebaseapp.com",
+    databaseURL: "https://bgr-api-default-rtdb.firebaseio.com",
+    projectId: "bgr-api",
+    storageBucket: "bgr-api.appspot.com",
+    messagingSenderId: "50853591148",
+    appId: "1:50853591148:web:a4fc4984ae70d01a3bc049",
+    measurementId: "G-TNJPKJD7EE"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+//create firebase database reference
+var dbRef = firebase.database();
+var podcastepsRef = dbRef.ref('comments/post/' + postid);
+
+//load older conatcts as well as any newly added one...
+podcastepsRef.on("child_added", function(snap) {
+  $('#comments').append(contactHtmlFromObject(snap.val()));
+});
+
+
+//save contact
+document.querySelector('.addValue')
+  .addEventListener("click", function( event ) {  
+    event.preventDefault();
+    if( document.querySelector('#name').value != '' 
+          || document.querySelector('#comment').value != '' ){
+      podcastepsRef.push({
+        name: document.querySelector('#name').value,
+        comment: document.querySelector('#comment').value,
+        cert: "Guest",
+        status: "Posted",
+      });
+      contactForm.reset();
+    } else {
+      alert('Please complete the form!');
+    }
+  }, false);
+
+//prepare conatct object's HTML
+function contactHtmlFromObject(contact){
+  var html = '';
+  html += '<li class="list-group-item contact" style="text-align: left; background-color: silver;">';
+    html += '<div>';
+      html += '<p class="lead">'+contact.name + '      <span style="background-color:white; font-size: 20px;" class="userbadge">' + contact.cert + '</span>'
+      html += '<p>❛'+contact.comment+'❜</p>';
+    html += '</div>';
+  html += '</li>';
+  html += '<br>';
+  return html;
+}
+  </script>
+</footer>
+
+
+
+<style>
+  .header {
+    border-radius: 20px;
+    padding: 20px;
+    width: 250x;
+    height: 90px;
+    text-align: center;
+    color: white;
+    background-color: #000000;
+  }
+  body {
+    background-color: lightgray;
+    text-align: center;
+  }
+</style>
