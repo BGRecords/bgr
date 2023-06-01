@@ -1,3 +1,4 @@
+
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
@@ -97,6 +98,72 @@ Hello, <span id="artist"></span>
     Delete Account
   </button>
 </h2>
+<hr>
+
+
+      <div style="text-align: center; max-height: 500px;">
+        <hr>
+        <ul id="tiles" class="list-group" style="text-align: center; max-height: 500px; overflow-y: auto;">
+     <li style="text-align: center; background-color: darkgray;" hidden>
+    <div>
+      <p class="lead">NOTICE:</p>
+      <p>This fearure is still in beta and may take a few weeks for everything to display.</p>
+  </div>
+</li>
+<br>
+        </ul>
+      </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) and Bootstrap -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <!-- Include Firebase Library and Config-->
+  <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
+  <!-- users Store JavaScript -->
+<script>
+  
+    const firebaseConfig3 = {
+    apiKey: "AIzaSyBkFMScThR9gMEYCBvsd8kDSOnE9lR0q5E",
+    authDomain: "bgr-song-database.firebaseapp.com",
+    databaseURL: "https://bgr-song-database-default-rtdb.firebaseio.com",
+    projectId: "bgr-song-database",
+    storageBucket: "bgr-song-database.appspot.com",
+    messagingSenderId: "1032475950224",
+    appId: "1:1032475950224:web:06551b463029b44a2d2c15",
+    measurementId: "G-2TRRCW4HNY"
+  };
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var key = parts[2];
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+firebase.initializeApp(firebaseConfig3);
+
+//create firebase database reference
+var dbRefq = firebase.database();
+var usersRefq = dbRefq.ref('key/' + key + '/tiles/');
+
+//load older conatcts as well as any newly added one...
+usersRefq.on("child_added", function(snapq) {
+  $('#tiles').append(contactHtmlFromObjectb(snapq.val()));
+});
+
+
+
+//prepare conatct object's HTML
+function contactHtmlFromObjectb(contactp){
+  var htmlq = '';
+  var url = contactp.URL
+  var theme = contactp.Theme
+  htmlq += '<div style="text-align: center; background-color: silver;">';
+      htmlq += '<button onclick=window.open("' + url + '") class="btn-red" style="background-color: '+ theme +';border: 4px solid dark'+ theme +';">';
+      htmlq += contactp.Label;
+      htmlq += '</button>';
+  htmlq += '</div>';
+  htmlq += '<br>';
+  return htmlq;
+}
+</script>
 <hr>
 
 
@@ -320,7 +387,6 @@ function contactHtmlFromObject(contact){
   <script src="//www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
   <!-- users Store JavaScript -->
 <script>
-  
     const firebaseConfig2 = {
     apiKey: "AIzaSyBkFMScThR9gMEYCBvsd8kDSOnE9lR0q5E",
     authDomain: "bgr-song-database.firebaseapp.com",
