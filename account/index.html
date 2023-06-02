@@ -1,4 +1,3 @@
-
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </head>
@@ -98,12 +97,11 @@ Hello, <span id="artist"></span>
     Delete Account
   </button>
 </h2>
-<hr>
 
 
       <div style="text-align: center; max-height: 500px;">
         <hr>
-        <ul id="tiles" class="list-group" style="text-align: center; max-height: 500px; overflow-y: auto;">
+        <ul id="tiles" style="text-align: center;">
      <li style="text-align: center; background-color: darkgray;" hidden>
     <div>
       <p class="lead">NOTICE:</p>
@@ -131,17 +129,17 @@ Hello, <span id="artist"></span>
     appId: "1:1032475950224:web:06551b463029b44a2d2c15",
     measurementId: "G-2TRRCW4HNY"
   };
-  var type = window.location.hash.substr(1).replaceAll("%20", " ");
-  var parts = type.split("#");
+  var typee = window.location.hash.substr(1).replaceAll("%20", " ");
+  var partse = typee.split("#");
 
-  var key = parts[2];
+  var keye = partse[2];
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 firebase.initializeApp(firebaseConfig3);
 
 //create firebase database reference
 var dbRefq = firebase.database();
-var usersRefq = dbRefq.ref('key/' + key + '/tiles/');
+var usersRefq = dbRefq.ref('key/' + keye + '/tiles/');
 
 //load older conatcts as well as any newly added one...
 usersRefq.on("child_added", function(snapq) {
@@ -155,8 +153,8 @@ function contactHtmlFromObjectb(contactp){
   var htmlq = '';
   var url = contactp.URL
   var theme = contactp.Theme
-  htmlq += '<div style="text-align: center; background-color: silver;">';
-      htmlq += '<button onclick=window.open("' + url + '") class="btn-red" style="background-color: '+ theme +';border: 4px solid dark'+ theme +';">';
+  htmlq += '<div style="text-align: center; background-color: lightgray;">';
+      htmlq += '<button onclick=window.open("' + url + '") class="btn-red" style="background-color: '+ theme +';border: 4px solid dark'+ theme +'; border-radius: 50px;">';
       htmlq += contactp.Label;
       htmlq += '</button>';
   htmlq += '</div>';
@@ -170,7 +168,7 @@ function contactHtmlFromObjectb(contactp){
       <div class="col-md-4" style="text-align: center; max-height: 500px;">
         <h1>Approved Content (by you):</h1>
         <hr>
-        <ul id="users" class="list-group" style="text-align: center; max-height: 500px; overflow-y: auto;">
+        <ul id="users" class="list-group" style="text-align: center; max-height: 350px; overflow-y: auto;">
      <li style="text-align: center; background-color: darkgray;">
     <div>
       <p class="lead">NOTICE:</p>
@@ -223,7 +221,7 @@ usersRef.on("child_added", function(snap) {
 //prepare conatct object's HTML
 function contactHtmlFromObject(contact){
   var htmlb = '';
-  htmlb += '<li style="text-align: center; background-color: silver;">';
+  htmlb += '<li style="text-align: center; background-color: silver; border-radius: 50px;">';
     htmlb += '<div>';
       htmlb += '<p class="lead">'+contact.Song+'</p>';
       htmlb += '<p> Album: '+contact.Album+'</p>';
@@ -240,7 +238,7 @@ function contactHtmlFromObject(contact){
 
 <hr>
 <h1>BG Records Feed:</h1>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://bgr.glitch.me/bootstrap.css" />
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500&amp;subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
@@ -260,9 +258,9 @@ function contactHtmlFromObject(contact){
             <p class="card-text">This article contains the June changelog of BG Records.</p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <span>Tags:</span> <a class="btn btn-outline-secondary">CHANGELOG</a>, <a class="btn btn-outline-secondary">JUNE</a>
+            <span>Tags:</span> <a class="btn btn-outline-secondary" style="border-radius: 50px;">CHANGELOG</a>, <a class="btn btn-outline-secondary" style="border-radius: 50px;">JUNE</a>
             <hr>
-            <a href="https://bg-records.com/news/6298457/" target="_new" class="btn btn-primary">Read More</a>
+            <a href="https://bg-records.com/news/6298457/" target="_new" class="btn btn-primary" style="border-radius: 50px;">Read More</a>
           </div>
         </div>
       </div>
@@ -278,9 +276,9 @@ function contactHtmlFromObject(contact){
             <p class="card-text">This article contains information about the YouTube Management Tools.</p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <span>Tags:</span> <a class="btn btn-outline-secondary">INFO</a>, <a class="btn btn-outline-secondary">YouTube</a>
+            <span>Tags:</span> <a class="btn btn-outline-secondary" style="border-radius: 50px;">INFO</a>, <a class="btn btn-outline-secondary" style="border-radius: 50px;">YouTube</a>
             <hr>
-            <a href="https://bg-records.com/news/8736246/" target="_new" class="btn btn-primary">Read More</a>
+            <a href="https://bg-records.com/news/8736246/" target="_new" class="btn btn-primary" style="border-radius: 50px;">Read More</a>
           </div>
         </div>
       </div>
@@ -296,9 +294,9 @@ function contactHtmlFromObject(contact){
             <p class="card-text">This article contains information about claiming your Spotify artist profile to allow you to edit your profile yourself.</p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <span>Tags:</span> <a class="btn btn-outline-secondary">INFO</a>, <a class="btn btn-outline-secondary">Spotify</a>
+            <span>Tags:</span> <a class="btn btn-outline-secondary" style="border-radius: 50px;">INFO</a>, <a class="btn btn-outline-secondary" style="border-radius: 50px;">Spotify</a>
             <hr>
-            <a href="https://bg-records.com/news/3948725/" target="_new" class="btn btn-primary">Read More</a>
+            <a href="https://bg-records.com/news/3948725/" target="_new" class="btn btn-primary" style="border-radius: 50px;">Read More</a>
           </div>
         </div>
       </div>
@@ -314,9 +312,9 @@ function contactHtmlFromObject(contact){
             <p class="card-text">This article contains information that is required for uploading Albums or EPs.</p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <span>Tags:</span> <a class="btn btn-outline-secondary">INFO</a>, <a class="btn btn-outline-secondary">PDF</a>
+            <span>Tags:</span> <a class="btn btn-outline-secondary" style="border-radius: 50px;">INFO</a>, <a class="btn btn-outline-secondary" style="border-radius: 50px;">PDF</a>
             <hr>
-            <a href="https://bg-records.com/news/7640192/" target="_new" class="btn btn-primary">Read More</a>
+            <a href="https://bg-records.com/news/7640192/" target="_new" class="btn btn-primary" style="border-radius: 50px;">Read More</a>
           </div>
         </div>
       </div>
@@ -332,9 +330,9 @@ function contactHtmlFromObject(contact){
             <p class="card-text">Article about Artist Badges and User Badges.</p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <span>Tags:</span> <a class="btn btn-outline-secondary">INFO</a>
+            <span>Tags:</span> <a class="btn btn-outline-secondary" style="border-radius: 50px;">INFO</a>
             <hr>
-            <a href="https://bg-records.com/news/9238534/" target="_new" class="btn btn-primary">Read More</a>
+            <a href="https://bg-records.com/news/9238534/" target="_new" class="btn btn-primary" style="border-radius: 50px;">Read More</a>
           </div>
         </div>
       </div>
@@ -352,9 +350,9 @@ function contactHtmlFromObject(contact){
             <p class="card-text">Artists with over 100k followers can now make a name.artists@bg-records.com email</p>
           </div>
           <div class="card-footer" style="background: inherit; border-color: inherit;">
-            <span>Tags:</span> <a class="btn btn-outline-secondary">BETA</a>
+            <span>Tags:</span> <a class="btn btn-outline-secondary" style="border-radius: 50px;">BETA</a>
             <hr>
-            <a href="https://bg-records.com/news/2349587/" target="_new" class="btn btn-primary">Read More</a>
+            <a href="https://bg-records.com/news/2349587/" target="_new" class="btn btn-primary" style="border-radius: 50px;">Read More</a>
           </div>
         </div>
       <!--POS 2-->
@@ -419,7 +417,7 @@ usersRefc.on("child_added", function(snapc) {
 //prepare conatct object's HTML
 function contactHtmlFromObjectc(contactr){
   var html = '';
-  html += '<li style="text-align: center; background-color: silver;">';
+  html += '<li style="text-align: center; background-color: silver; border-radius: 50px;">';
     html += '<div>';
       html += '<p class="lead">'+contactr.Name+'</p>';
       html += '<p> Type: '+contactr.Cert+'</p>';
@@ -487,7 +485,7 @@ function contactHtmlFromObjectc(contactr){
     border: 2px solid cyan;
     width: 220px;
     height: 50px;
-    font-size: 15px;
+    font-size: 14px;
   }
   button:hover {
     background-color: blue;
@@ -503,7 +501,7 @@ function contactHtmlFromObjectc(contactr){
     border: 2px solid red;
     width: 220px;
     height: 50px;
-    font-size: 15px;
+    font-size: 14px;
   }
   .btn-red:hover {
     background-color: crimson;
@@ -519,7 +517,7 @@ function contactHtmlFromObjectc(contactr){
     border: 2px solid purple;
     width: 220px;
     height: 50px;
-    font-size: 15px;
+    font-size: 14px;
   }
   .btn-purple:hover {
     background-color: purple;
@@ -534,7 +532,7 @@ function contactHtmlFromObjectc(contactr){
     border-radius: 20px;
     padding: 20px;
     width: 250x;
-    height: 90px;
+    height: 80px;
     text-align: center;
     color: white;
     background-color: #000000;
@@ -542,6 +540,11 @@ function contactHtmlFromObjectc(contactr){
   body {
     background-color: lightgray;
     text-align: center;
+    font-size: 14px;
+    font-family: "Verdana";
+  }
+  button {
+    border-radius: 50px;
   }
 </style>
 
