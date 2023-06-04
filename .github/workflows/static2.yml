@@ -25,7 +25,7 @@ jobs:
   deploy:
     environment:
       name: beta github-pages
-      url: http://beta.bg-records.com
+      url: http://beta.bg-records.com/
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
