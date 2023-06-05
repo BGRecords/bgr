@@ -105,7 +105,38 @@ button:hover {
   var aboutartist = parts[4];
   var scode = parts[5];
   var spotlight = parts[6];
+  
 
+
+    if (scode === "undefined") {
+    var scode = "/failed";
+     document.getElementById('spotify').innerHTML = ""
+  }
+  
+  if (aboutartist === "undefined") {
+    var aboutartist = "";
+  }
+
+    if (year === "undefined") {
+    var year = "";
+  }
+  
+  if (copyright === "undefined") {
+    var copyright = "Unknown";
+  }
+
+  if (spotlight === "undefined") {
+    var spotlight = "";
+  }
+
+    if (song === "undefined") {
+    var song = "";
+  }
+
+  if (artist === "undefined") {
+    var artist = "";
+  }
+  
   if (artist === "Boss_GamerYT") {
     var spotlight = "Homewave";
   }
