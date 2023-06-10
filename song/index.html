@@ -46,8 +46,8 @@
   </script>
 </h2>
 <h2>Info: <span id="copyright"></span></h2>
-<audio rel="preload" controls controlslist="nodownload noplaybackrate" oncontextmenu="return false;" id="player" hidden>
-  <source rel="preload" preload="none" id="playerbase" />
+<audio rel="preload" controls controlslist="nodownload noplaybackrate" oncontextmenu="return false;" id="playerbase" hidden>
+  <source rel="preload" preload="none" id="player" />
 </audio>
 <br>
 <div style="background-color: silver; display:inline-block; text-align: center; padding: 20; border-radius: 50px;">
@@ -284,7 +284,7 @@ button:hover {
     .getElementById("spotify")
     .setAttribute("href", "https://open.spotify.com/track/" + scode);
   document
-    .getElementById("player")
+    .getElementById("playerbase")
     .setAttribute(
       "src",
       "https://cdn.glitch.me/1d504920-1dff-4f7f-8350-daf89caa11d4/" +
