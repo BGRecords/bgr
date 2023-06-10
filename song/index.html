@@ -328,12 +328,14 @@ function togglePlay() {
   if (isPlaying === false) {
       document.getElementById('playbutton').src = "https://bg-records.com/ui/pause.png"
     document.getElementById('playerbase').play()
+    console.log("playing")
       isPlaying = true
   } 
   
   else {
      document.getElementById('playbutton').src = "https://bg-records.com/ui/play.png"
     document.getElementById('playerbase').pause()
+    console.log("pausing")
     isPlaying = false
   }
 }
