@@ -310,14 +310,7 @@ button:hover {
   }
 </style>
 
-<script>
-  player.addEventListener("loadedmetadata", function () {
-    if (player.buffered.length === 0) return;
 
-    const bufferedSeconds = player.buffered.end(0) - player.buffered.start(0);
-    console.log(`${bufferedSeconds} seconds of player are ready to play.`);
-  });
-</script>
 
 <script>
 var isPlaying = false
