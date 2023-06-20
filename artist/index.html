@@ -1,3 +1,4 @@
+
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -42,6 +43,7 @@
   <script>
     $("#aboutlib").load("https://bgr.glitch.me/api/about.html");
   </script>
+          <button id="likepage" onclick="like()" style="border-radius: 50px; background-color: pink">Like Page</button> <span><span id="likesamount">{BGAPI.LIKES}</span> Likes</span>
 <h2 id="a">Pinned Song: <a href="/" id="spotlight"></a></h2>
       <div class="col-md-4" style="text-align: center; height: 250px;">
         <h1>Songs by Artist:</h1>
@@ -90,6 +92,8 @@ var usersRef = dbRef.ref('artist/' + key + '/songs/');
 usersRef.on("child_added", function(snap) {
   $('#users').append(contactHtmlFromObject(snap.val()));
 });
+  
+  
 
 
 
@@ -107,6 +111,8 @@ function contactHtmlFromObject(contact){
 }
 </script>
 <script>
+
+  
   var type = window.location.hash.substr(1).replaceAll("%20", " ");
   var parts = type.split("#");
 
@@ -140,6 +146,39 @@ function contactHtmlFromObject(contact){
   if (document.getElementById("spotlight").innerHTML === "undefined") {
     document.getElementById("a").innerHTML = "";
   }
+</script>
+
+
+<script>
+var dbRefe = firebase.database();
+var usersRefe = dbRefe.ref('artist/' + key + '/data/');
+  usersRefe.on('value', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      childData = childSnapshot.val();
+document.getElementById('likesamount').innerHTML = childData
+      console.log(childData)
+    })
+})
+</script>
+<script>
+function like() {
+    document.getElementById('likepage').setAttribute("disabled", true)
+    document.getElementById('likepage').innerHTML = "Liked Page"
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var key = parts[0];
+  
+//create firebase database reference
+var dbRefe = firebase.database();
+var usersRefe = dbRefe.ref('artist/' + key + '/data/');
+var nextlike = childData+1
+document.getElementById('likesamount').innerHTML = nextlike
+  var likess = usersRefe.likes
+    usersRefe.set({
+      likes: nextlike,
+    });}
+
 </script>
 
 <style>
