@@ -173,11 +173,11 @@ function like() {
 var dbRefe = firebase.database();
 var usersRefe = dbRefe.ref('artist/' + key + '/data/');
 var nextlike = childData+1
-document.getElementById('likesamount').innerHTML = nextlike
+//document.getElementById('likesamount').innerHTML = nextlike
   var likess = usersRefe.likes
-    usersRefe.set({
-      likes: nextlike,
-    });}
+   // usersRefe.set({
+      /5likes: nextlike,
+   // });}
 
 </script>
 
