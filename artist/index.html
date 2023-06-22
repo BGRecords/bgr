@@ -168,16 +168,16 @@ function like() {
   var parts = type.split("#");
 
   var key = parts[0];
-  
+  if(key !== "Liam McMaster") {
 //create firebase database reference
 var dbRefe = firebase.database();
 var usersRefe = dbRefe.ref('artist/' + key + '/data/');
 var nextlike = childData+1
-//document.getElementById('likesamount').innerHTML = nextlike
+document.getElementById('likesamount').innerHTML = nextlike
   var likess = usersRefe.likes
-   // usersRefe.set({
+    usersRefe.set({
       /5likes: nextlike,
-   // });}
+    })};}
 
 </script>
 
