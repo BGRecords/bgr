@@ -1,14 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-<channel>
-<title>New Releases</title>
-<link>https://bg-records.com</link>
-<description>New Releases</description>
-<item>
-<title>Welcome to BGR News</title>
-<link>https://bg-records.com</link>
-<guid>https://bg-records.com</guid>
-<description>Welcome to BGR News Channel</description>
-</item>
-</channel>
+		<!--	created with www.mysitemapgenerator.com	-->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Boss_GamerRECORDS</title>
+		<link><![CDATA[https://bg-records.com]]></link>
+		<description>Distribute music or listen to podcasts or songs!</description>
+		<pubDate>Wed, 28 Jun 2023 20:46:28 +0000</pubDate>
+		<item>
+			<guid isPermaLink="false">1204129831</guid>
+			<title>Boss_GamerRECORDS</title>
+			<link>https://bg-records.com/contact/</link>
+			<dc:creator>Administrator</dc:creator>
+			<category>Site News</category>
+			<description>Distribute music or listen to podcasts or songs!</description>
+			<pubDate>Wed, 28 Jun 2023 20:39:47 GMT</pubDate>
+		</item>
+	</channel>
 </rss>
