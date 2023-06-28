@@ -2,14 +2,13 @@
 <rss version="2.0">
 <channel>
 <title>New Releases</title>
-<link>bg-records.com</link>
+<link>https://bg-records.com</link>
 <description>New Releases</description>
 <item>
 <title>Welcome to BGR News</title>
-<link>bg-records.com</link>
-<guid>bg-records.com</guid>
-<pubDate>Wed, 28 June 2023</pubDate>
+<link>https://bg-records.com</link>
+<guid>https://bg-records.com</guid>
 <description>Welcome to BGR News Channel</description>
 </item>
-</channel>
+</channel rel="self">
 </rss>
