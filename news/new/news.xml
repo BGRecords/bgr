@@ -6,15 +6,7 @@
 		<link><![CDATA[https://bg-records.com]]></link>
 		<description>BG Records News</description>
 		<pubDate>Wed, 28 Jun 2023 20:46:28 +0000</pubDate>
-		<item>
-			<guid isPermaLink="false">1204129831</guid>
-			<title>Welcome to BG Records News</title>
-			<link>https://bg-records.com/contact/</link>
-			<dc:creator>BG Records</dc:creator>
-			<category>Site News</category>
-			<description>Please follow our page for artist and song updates!</description>
-			<pubDate>Wed, 28 Jun 2023 20:39:47 GMT</pubDate>
-		</item>
+
 		<item>
 			<guid isPermaLink="false">1204129832</guid>
 			<title>New Android App!</title>
@@ -23,6 +15,15 @@
 			<category>Mobile APp</category>
 			<description>Brand new BG Records android app</description>
 			<pubDate>Fri, 30 Jun 2023 22:07:00 GMT</pubDate>
+		</item>
+		<item>
+			<guid isPermaLink="false">1204129831</guid>
+			<title>Welcome to BG Records News</title>
+			<link>https://bg-records.com/contact/</link>
+			<dc:creator>BG Records</dc:creator>
+			<category>Site News</category>
+			<description>Please follow our page for artist and song updates!</description>
+			<pubDate>Wed, 28 Jun 2023 20:39:47 GMT</pubDate>
 		</item>
 	</channel>
 </rss>
