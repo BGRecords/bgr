@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>BG Records</title>
+		<link><![CDATA[https://bg-records.com]]></link>
+		<description>BG Records News</description>
+		<pubDate>Wed, 28 Jun 2023 20:46:28 +0000</pubDate>
+
+		<item>
+			<guid isPermaLink="false">1204129831</guid>
+			<title>Get your music online for free</title>
+			<link>https://bg-records.com/artists/new/apply/</link>
+			<dc:creator>BG Records</dc:creator>
+			<category>Music</category>
+			<description>Get yout songs online!</description>
+			<pubDate>Fri, 30 Jun 2023 22:22:00 GMT</pubDate>
+		</item>
+	</channel>
+</rss>
