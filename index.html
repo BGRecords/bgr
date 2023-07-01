@@ -50,8 +50,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <img src="https://cdn.glitch.global/6374d241-d518-4441-bcff-f2489ef8336d/BGRECORDS2.png?v=1677955982282" alt="BGRecords Branding" height="80" width="120">
 </div>
 <a href="/login"><h5>Login</h5></a>
-<h1>
+<h1 class="desktop-only">
   BG Records:
+</h1>
+<h1 class="mobile-only" style="display: none;">
+  BGR | Mobile:
 </h1>
 <h2>
   <button onclick="window.location.replace('https://bg-records.com/songs')">Web Player</button><span style="font-size:15px;"><br> Play & View Artists and Songs</span>
@@ -64,17 +67,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </h2>
 <hr>
 <h2>
-  <button onclick="window.location.replace('https://bg-records.com/artists')"> Boss_GamerRecords for artists</a><span style="font-size:15px;"><br> Manage your distributed tracks & channel</span>
+  <button onclick="window.location.replace('https://bg-records.com/artists')" class="desktop-only"> Boss_GamerRecords for artists</a><span style="font-size:15px;"><br> Manage your distributed tracks & channel</span>
 </h2>
 <br>
 <h3>
-  <button onclick="window.location.replace('https://bg-records.com/app/android/')"> Android APP</a><span style="font-size:15px;"><br> Download our free android app!</span>
+  <button onclick="window.location.replace('https://bg-records.com/app/android/')" class="desktop-only"> Android APP</a><span style="font-size:15px;"><br> Download our free android app!</span>
 </h3>
 <br>
 <footer>
 ©® Boss_GamerRECORDS 2023
 	<a href="/contact">Contact Us</a>
 </footer>
+
+<style>
+@media screen and (max-width: 480px) {
+  .desktop-only{
+    display: none
+  }
+  .mobile-only{
+    display: inline
+  }
+}
+</style>
 
 <style>
 .header{
