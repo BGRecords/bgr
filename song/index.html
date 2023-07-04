@@ -61,7 +61,9 @@
   <button onclick="download();" style="background-color: crimson;" hidden><image src="https://bg-records.com/ui/download.png" width="40px" id="downloadbutton"></image></button>
 </div>
 <hr>
-
+<div id="devmode" class="hide-div">
+  <h1>Developer Mode Failed (BGR-DEV.MODULE)</h1>
+</div>
 
       <div class="col-md-4" style="text-align: center; max-height: 350px; overflow-y: auto;">
         <h1>Songs by Artist:</h1>
@@ -407,4 +409,16 @@ function sToTime(t) {
 function padZero(v) {
   return (v < 10) ? "0" + v : v;
 }
+</script>
+
+<style>
+  .hide-div {
+    display: none;
+  }
+</style>
+
+<script>
+  function devmode() {
+    document.getElementById('devmode').style.display = "block"
+  }
 </script>
