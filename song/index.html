@@ -167,6 +167,13 @@ button:hover {
     </p>
   </div>
 </div>
+
+<script>
+  function showArt() {
+    document.getElementById('coverart').style.display = "block"
+  }
+</script>
+
 <script>
   var type = window.location.hash.substr(1).replaceAll("%20", " ");
   var parts = type.split("#");
@@ -216,12 +223,12 @@ button:hover {
   if (artist === "Various Artists") {
     var aboutartist = "Various Artists Channel";
     var artist = "Various Artists - Topic";
-    showArt();
+    document.getElementById('coverart').style.display = "block"
   }
   if (artist === "") {
     var aboutartist = "Various Artists Channel";
     var artist = "Various Artists - Topic";
-    showArt();
+    document.getElementById('coverart').style.display = "block"
   }
 
   if (song === "Invincible (Liam McMaster Remix)") {
@@ -428,8 +435,4 @@ function padZero(v) {
   }
 </script>
 
-<script>
-  function showArt() {
-    document.getElementById('coverart').style.display = "block"
-  }
-</script>
+
