@@ -33,6 +33,9 @@
   /></a>
 </div>
 <h1>
+  <div id="coverart" class="hide-div">
+    <img src="https://bg-records.com/ui/album-error.png">
+</div>
   Song: <span id="song"></span> |
   <a id="spotify" href="https://open.spotify.com/track/" target="_new"
     >Play -- on Spotify</a
@@ -213,10 +216,12 @@ button:hover {
   if (artist === "Various Artists") {
     var aboutartist = "Various Artists Channel";
     var artist = "Various Artists - Topic";
+    showArt();
   }
   if (artist === "") {
     var aboutartist = "Various Artists Channel";
     var artist = "Various Artists - Topic";
+    showArt();
   }
 
   if (song === "Invincible (Liam McMaster Remix)") {
@@ -420,5 +425,11 @@ function padZero(v) {
 <script>
   function devmode() {
     document.getElementById('devmode').style.display = "block"
+  }
+</script>
+
+<script>
+  function showArt() {
+    document.getElementById('coverart').style.display = "block"
   }
 </script>
