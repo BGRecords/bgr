@@ -4,7 +4,17 @@
 </div>
 
 <script>
-function pageloaded() {
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var song = parts[0];
+  var artist = parts[1];
+  var copyright = parts[2];
+  var year = parts[3];
+  var aboutartist = parts[4];
+  var scode = parts[5];
+  var spotlight = parts[6];
+  
     const contenta = [
   { holder: "homewave", artist: "boss_gameryt,liam mcmaster", content: "https://cdn.glitch.global/1d504920-1dff-4f7f-8350-daf89caa11d4/Test.jpg"},
 ];
@@ -22,8 +32,4 @@ if (song.toLowerCase() === ccontent.holder && artist.toLowerCase() === ccontent.
   document.getElementById('coverart').style.display = "inline"
 }
 }
-}
-
-
-window.onload = pageloaded;
 </script>
