@@ -16,7 +16,7 @@ var ccontent = contenti
 
  //   sela = "<a class='song' song=" + sela.song + " " + "artist=" + sela.artist + " " + "aboutartist=" + sela.aboutartist + " " + "year=" + sela.released + " " + "copyright=" + sela.copyright + " " + "scode=" + sela.scode + " " + "pin=" + sela.spotlight + " " + ">" + "</a>"// + "<img src=" + 'https://dummyimage.com/600x400/000/fff&text=' + sela.song + " " + "height="+ "50" + " " + "width=" + "50" + " " + "style=" + 'display: inline;' + " "
 //    document.write('<div> <span class="material-symbols-sharp">forward</span><h5 hidden>'+ selab.song +'</h5>'+sela+'<hr></div>');
-if (song.toLowerCase() === ccontent.holder && artist.toLowerCase() === ccontent.artist) {
+if (song.toString().toLowerCase() === ccontent.holder && artist.toString().toLowerCase() === ccontent.artist) {
   document.getElementById('cover-art').src = ccontent.content
   document.getElementById('coverart').style.display = "inline"
 }
