@@ -1,4 +1,29 @@
 
+<script>
+  //cookies api
+  
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+</script>
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -43,7 +68,7 @@
   <script>
     $("#aboutlib").load("https://bgr.glitch.me/api/about.html");
   </script>
-          <button id="likepage" onclick="like()" style="border-radius: 50px; background-color: pink">Like Page</button> <span><span id="likesamount">{BGAPI.LIKES}</span> Likes</span>
+          <button id="likepage" onclick="likecheck()" style="border-radius: 50px; background-color: pink">Like Page</button> <span><span id="likesamount">{BGAPI.LIKES}</span> Likes</span>
 <h2 id="a">Pinned Song: <a href="/" id="spotlight"></a></h2>
       <div class="col-md-4" style="text-align: center; height: 250px;">
         <h1>Songs by Artist:</h1>
@@ -161,6 +186,25 @@ document.getElementById('likesamount').innerHTML = childData
 })
 </script>
 <script>
+var key = parts[0];
+var pagelikedcookie = key
+
+function likecheck() {
+  var isliked = getCookie(pagelikedcookie);
+  if (isliked !== "true") {
+   setCookie(pagelikedcookie, "true", 365);
+   like();
+  }
+}
+
+  var isliked = getCookie(pagelikedcookie);
+  if (isliked !== "true") {
+  } else {
+    document.getElementById('likepage').setAttribute("disabled", true)
+    document.getElementById('likepage').innerHTML = "Liked Page"
+  }
+
+
 function like() {
     document.getElementById('likepage').setAttribute("disabled", true)
     document.getElementById('likepage').innerHTML = "Liked Page"
