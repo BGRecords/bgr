@@ -426,6 +426,7 @@ function change() {
   document.getElementById('seek-slider').value = document.getElementById('playerbase').currentTime
   document.getElementById('seek-slider').max = document.getElementById('playerbase').duration
   document.getElementById('durationremain').innerHTML = sToTime(document.getElementById('playerbase').duration)
+  setCookie("songtime",document.getElementById('playerbase').currentTime , 365);
 }
 
 let auda = document.getElementById("playerbase");
@@ -443,6 +444,7 @@ slidera.addEventListener('input', slideraChange);
 
 function slideraChange() {
   audb.volume = slidera.value / 100
+  setCookie("songvol",audb.volume, 365);
   audiodisplay.innerHTML = slidera.value + "%"
   
   if (slidera.value === "0") {
@@ -473,5 +475,4 @@ function padZero(v) {
     document.getElementById('devmode').style.display = "block"
   }
 </script>
-
 
