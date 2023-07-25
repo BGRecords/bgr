@@ -39,7 +39,7 @@ function getCookie(cname) {
   text-align: center;
 }
 </style>
-<div class="musicbar center"><span class="center" id="songname"><a id="songplaceholder">{song}</a></span> by <span class="center" id="songartist"><a id="artistplaceholder">{artist}</a></span>
+<div class="musicbar center" id="mainbar"><span class="center" id="songname"><a id="songplaceholder">{song}</a></span> by <span class="center" id="songartist"><a id="artistplaceholder">{artist}</a></span>
 <hr style="width: 80px;">
 <div style="background-color: silver; display:inline-block; text-align: center; padding: 20; border-radius: 50px;">
   <button onclick="togglePlay();"><image src="https://bg-records.com/ui/play.png" width="20px" id="playbutton"></image></button>
@@ -57,6 +57,9 @@ function getCookie(cname) {
 var song = getCookie("savesong")
 var artist = getCookie("saveartist")
 
+if (song === "") {
+  document.getElementById('mainbar').style.display = "none"
+}
 
 document.getElementById("songplaceholder").setAttribute("href", "https://bg-records.com/song#" + song + "#" + artist);
 document.getElementById("artistplaceholder").setAttribute("href", "https://bg-records.com/artist#" + artist);
