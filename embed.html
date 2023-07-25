@@ -143,6 +143,7 @@ function toggleLoop() {
 
 
 
+
 let aud = document.getElementById("playerbase");
 
 aud.ontimeupdate = function() {change()};
@@ -152,6 +153,7 @@ function change() {
   document.getElementById('seek-slider').value = document.getElementById('playerbase').currentTime
   document.getElementById('seek-slider').max = document.getElementById('playerbase').duration
   document.getElementById('durationremain').innerHTML = sToTime(document.getElementById('playerbase').duration)
+  setCookie("songtime",document.getElementById('playerbase').currentTime , 365);  
 }
 
 let auda = document.getElementById("playerbase");
@@ -169,6 +171,7 @@ slidera.addEventListener('input', slideraChange);
 
 function slideraChange() {
   audb.volume = slidera.value / 100
+  setCookie("songvol",slidera.value, 365);
   audiodisplay.innerHTML = slidera.value + "%"
   
   if (slidera.value === "0") {
@@ -213,4 +216,19 @@ if (showbar === "true") {
 } else {
   show();
 }
+</script>
+
+<script>
+  var stime = getCookie("songtime");
+  var svolume = getCookie("songvol");
+  var audab = document.getElementById("playerbase");
+
+  
+var slideraaa = document.getElementById('volume-slider');
+let audiodisplayaa = document.getElementById("volume-output");
+
+  audiodisplayaa.innerHTML = svolume + "%"
+  slideraaa.value = svolume
+  audab.volume = svolume / 100
+  auda.currentTime = stime
 </script>
