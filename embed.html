@@ -32,21 +32,21 @@ function getCookie(cname) {
   height: 110px;
   left: 0;
   right: 0;
-  font-size: 25px
+  font-size: 18px
 }
 
 .center {
   text-align: center;
 }
 </style>
-<div class="musicbar center" id="mainbar"><span class="center" id="songname"><a id="songplaceholder">{song}</a></span> by <span class="center" id="songartist"><a id="artistplaceholder">{artist}</a></span>
+<div class="musicbar center" id="mainbar"><button onclick="hide()">Hide</button><br><span class="center" id="songname"><a id="songplaceholder">{song}</a></span> by <span class="center" id="songartist"><a id="artistplaceholder">{artist}</a></span>
 <hr style="width: 80px;">
 <div style="background-color: silver; display:inline-block; text-align: center; padding: 20; border-radius: 50px;">
   <button onclick="togglePlay();"><image src="https://bg-records.com/ui/play.png" width="20px" id="playbutton"></image></button>
 
    <span id="duration" class="time">00:00</span> | <span id="durationremain" class="time">00:00</span> | <input type="range" id="seek-slider" max="100" value="0">
    <output id="volume-output">100% | </output><input type="range" id="volume-slider" max="100" value="100"><button onclick="toggleMute();"><image src="https://bg-records.com/ui/sound-on.png" width="20px" id="mutebutton"></image></button> <button onclick="toggleLoop();"><image src="https://bg-records.com/ui/loop-off.png" width="20px" id="loopbutton"></image></button>
-  </div></div>
+  </div></div><div id="mainbart" class="center" style="text-align: center; bottom: 0; position: fixed;"><button onclick="show()" class="center">Show</button></div>
 
 
 <audio rel="preload"  controls controlslist="nodownload noplaybackrate" oncontextmenu="return false;" id="playerbase" hidden>
@@ -68,7 +68,7 @@ document.getElementById("songplaceholder").innerHTML = song
 document.getElementById("artistplaceholder").innerHTML = artist
 
 
-
+  document.getElementById('mainbart').style.display = "none"
 document.getElementById("playerbase").setAttribute("src", "https://cdn.glitch.me/1d504920-1dff-4f7f-8350-daf89caa11d4/" + song + ".wav");
 
 
@@ -193,3 +193,24 @@ function padZero(v) {
     display: none;
   }
 </style>
+
+<script>
+function hide() {
+  document.getElementById('mainbar').style.display = "none"
+  document.getElementById('mainbart').style.display = "inline"
+  setCookie("hidebar", "true", 365);
+}
+
+function show() {
+  document.getElementById('mainbar').style.display = "block"
+  document.getElementById('mainbart').style.display = "none"
+  setCookie("hidebar", "false", 365);
+}
+
+var showbar = getCookie("hidebar");
+if (showbar === "true") {
+  hide();
+} else {
+  show();
+}
+</script>
