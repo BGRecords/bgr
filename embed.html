@@ -1,0 +1,192 @@
+<script>
+  //cookies api
+  
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+</script>
+
+<style>
+.musicbar {
+  position: fixed;
+  bottom: 0;
+  background-color: silver;
+  height: 110px;
+  left: 0;
+  right: 0;
+  font-size: 25px
+}
+
+.center {
+  text-align: center;
+}
+</style>
+<div class="musicbar center"><span class="center" id="songname"><a id="songplaceholder">{song}</a></span> by <span class="center" id="songartist"><a id="artistplaceholder">{artist}</a></span>
+<hr style="width: 80px;">
+<div style="background-color: silver; display:inline-block; text-align: center; padding: 20; border-radius: 50px;">
+  <button onclick="togglePlay();"><image src="https://bg-records.com/ui/play.png" width="20px" id="playbutton"></image></button>
+
+   <span id="duration" class="time">00:00</span> | <span id="durationremain" class="time">00:00</span> | <input type="range" id="seek-slider" max="100" value="0">
+   <output id="volume-output">100% | </output><input type="range" id="volume-slider" max="100" value="100"><button onclick="toggleMute();"><image src="https://bg-records.com/ui/sound-on.png" width="20px" id="mutebutton"></image></button> <button onclick="toggleLoop();"><image src="https://bg-records.com/ui/loop-off.png" width="20px" id="loopbutton"></image></button>
+  </div></div>
+
+
+<audio rel="preload"  controls controlslist="nodownload noplaybackrate" oncontextmenu="return false;" id="playerbase" hidden>
+  <source rel="preload" preload="none" id="player" />
+</audio>
+
+<script>
+var song = getCookie("savesong")
+var artist = getCookie("saveartist")
+
+
+document.getElementById("songplaceholder").setAttribute("href", "https://bg-records.com/song#" + song + "#" + artist);
+document.getElementById("artistplaceholder").setAttribute("href", "https://bg-records.com/artist#" + artist);
+  
+document.getElementById("songplaceholder").innerHTML = song
+document.getElementById("artistplaceholder").innerHTML = artist
+
+
+
+document.getElementById("playerbase").setAttribute("src", "https://cdn.glitch.me/1d504920-1dff-4f7f-8350-daf89caa11d4/" + song + ".wav");
+
+
+var isPlaying = false
+var isMuted = false
+var isLooped = false
+
+function togglePlay() {
+  if (isPlaying === false) {
+      document.getElementById('playbutton').src = "https://bg-records.com/ui/pause.png"
+    document.getElementById('playerbase').play()
+    console.log("playing")
+    setCookie("songplaying", "true", 365);
+      isPlaying = true
+  } 
+  
+  else {
+     document.getElementById('playbutton').src = "https://bg-records.com/ui/play.png"
+    document.getElementById('playerbase').pause()
+    console.log("pausing")
+    setCookie("songplaying", "false", 365);
+    isPlaying = false
+  }
+}
+
+
+function toggleMute() {
+  if (isMuted === false) {
+      document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-off.png"
+    document.getElementById('playerbase').muted = true
+    setCookie("songmuted", "true", 365);
+      isMuted = true
+  } 
+  
+  else {
+     document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-on.png"
+    document.getElementById('playerbase').muted = false
+    setCookie("songmuted", "false", 365);
+    isMuted = false
+  }
+}
+
+function toggleLoop() {
+  if (isLooped === false) {
+      document.getElementById('loopbutton').src = "https://bg-records.com/ui/loop-on.png"
+    document.getElementById('playerbase').loop = true
+    setCookie("songloop", "true", 365);
+    isLooped = true
+  } 
+  
+  else {
+     document.getElementById('loopbutton').src = "https://bg-records.com/ui/loop-off.png"
+    document.getElementById('playerbase').loop = false
+    setCookie("songloop", "false", 365);
+    isLooped = false
+  }
+}
+
+
+  var ismuted = getCookie("songmuted");
+  if (ismuted === "true") {
+    toggleMute();
+  } else {
+  }
+
+  var isloop = getCookie("songloop");
+  if (isloop === "true") {
+    toggleLoop();
+  } else {
+  }
+
+
+
+
+let aud = document.getElementById("playerbase");
+
+aud.ontimeupdate = function() {change()};
+
+function change() {
+  document.getElementById('duration').innerHTML = sToTime(document.getElementById('playerbase').currentTime)
+  document.getElementById('seek-slider').value = document.getElementById('playerbase').currentTime
+  document.getElementById('seek-slider').max = document.getElementById('playerbase').duration
+  document.getElementById('durationremain').innerHTML = sToTime(document.getElementById('playerbase').duration)
+}
+
+let auda = document.getElementById("playerbase");
+var slider = document.getElementById('seek-slider');
+slider.addEventListener('input', sliderChange);
+
+function sliderChange() {
+  auda.currentTime = slider.value
+}
+
+let audb = document.getElementById("playerbase");
+let audiodisplay = document.getElementById("volume-output");
+var slidera = document.getElementById('volume-slider');
+slidera.addEventListener('input', slideraChange);
+
+function slideraChange() {
+  audb.volume = slidera.value / 100
+  audiodisplay.innerHTML = slidera.value + "%"
+  
+  if (slidera.value === "0") {
+    document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-off.png"
+  } 
+  else {
+     document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-on.png"
+  }
+}
+
+function sToTime(t) {
+  return padZero(parseInt((t / (60)) % 60)) + ":" + 
+         padZero(parseInt((t) % 60));
+}
+function padZero(v) {
+  return (v < 10) ? "0" + v : v;
+}
+</script>
+
+<style>
+  .hide-div {
+    display: none;
+  }
+</style>
