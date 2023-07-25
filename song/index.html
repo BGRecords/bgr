@@ -1,3 +1,28 @@
+<script>
+  //cookies api
+  
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+</script>
 
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -294,17 +319,8 @@ button:hover {
   document.getElementById("year").innerHTML = year;
   document.title = song + " (" + artist + ")";
   //document.getElementById('artist').setAttribute('href', "https://bg-records.com/artist" + "#" + artist + "#" + aboutartist + "#" + spotlight);
-  document
-    .getElementById("spotify")
-    .setAttribute("href", "https://open.spotify.com/track/" + scode);
-  document
-    .getElementById("playerbase")
-    .setAttribute(
-      "src",
-      "https://cdn.glitch.me/1d504920-1dff-4f7f-8350-daf89caa11d4/" +
-        song +
-        ".wav"
-    );
+  document.getElementById("spotify").setAttribute("href", "https://open.spotify.com/track/" + scode);
+  document.getElementById("playerbase").setAttribute("src", "https://cdn.glitch.me/1d504920-1dff-4f7f-8350-daf89caa11d4/" + song + ".wav");
   document.getElementById("player").preload = "none";
   document.getElementById("spotify").innerHTML = "Play " + song + " on Spotify";
 </script>
@@ -334,6 +350,12 @@ button:hover {
 
 
 <script>
+  var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
+
+  var song = parts[0];
+  var artist = parts[1];
+
 var isPlaying = false
 var isMuted = false
 var isLooped = false
@@ -343,6 +365,9 @@ function togglePlay() {
       document.getElementById('playbutton').src = "https://bg-records.com/ui/pause.png"
     document.getElementById('playerbase').play()
     console.log("playing")
+    setCookie("savesong", song, 365);
+    setCookie("saveartist", artist, 365);
+    setCookie("songplaying", "true", 365);
       isPlaying = true
   } 
   
@@ -350,6 +375,7 @@ function togglePlay() {
      document.getElementById('playbutton').src = "https://bg-records.com/ui/play.png"
     document.getElementById('playerbase').pause()
     console.log("pausing")
+    setCookie("songplaying", "false", 365);
     isPlaying = false
   }
 }
@@ -359,12 +385,14 @@ function toggleMute() {
   if (isMuted === false) {
       document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-off.png"
     document.getElementById('playerbase').muted = true
+    setCookie("songmuted", "true", 365);
       isMuted = true
   } 
   
   else {
      document.getElementById('mutebutton').src = "https://bg-records.com/ui/sound-on.png"
     document.getElementById('playerbase').muted = false
+    setCookie("songmuted", "false", 365);
     isMuted = false
   }
 }
@@ -373,12 +401,14 @@ function toggleLoop() {
   if (isLooped === false) {
       document.getElementById('loopbutton').src = "https://bg-records.com/ui/loop-on.png"
     document.getElementById('playerbase').loop = true
+    setCookie("songloop", "true", 365);
       isLooped = true
   } 
   
   else {
      document.getElementById('loopbutton').src = "https://bg-records.com/ui/loop-off.png"
     document.getElementById('playerbase').loop = false
+    setCookie("songloop", "false", 365);
     isLooped = false
   }
 }
