@@ -44,6 +44,5 @@ submitButton.addEventListener("click", function() {
           if (errorCode === "auth/user-not-found") {
           document.write("Hello!, This account does not exist! INFO:" + errorCode);
           }
-      window.alert("Error Code: " + errorCode + " Error: " + errorMessage + " Contact us if you think this is an error or an mistake.");
     });
 });
