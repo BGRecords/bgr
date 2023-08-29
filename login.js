@@ -39,7 +39,10 @@ submitButton.addEventListener("click", function() {
       const errorCode = error.code;
       const errorMessage = error.message;
           if (errorCode === "auth/user-disabled") {
-          document.write("Hello!, Your BG Records Artist account has been banned for violating our policies. <br> Please contact bans@bg-records.com if you belive this is a mistake (Please send the email using the email your BG Records account is registered on)");
+          document.write("Hello!, Your BG Records Artist account has been banned for violating our policies. <br> Please contact bans@bg-records.com if you belive this is a mistake (Please send the email using the email your BG Records account is registered on) INFO:" + errorCode);
+          }
+          if (errorCode === "auth/user-not-found") {
+          document.write("Hello!, This account does not exist! INFO:" + errorCode);
           }
       window.alert("Error Code: " + errorCode + " Error: " + errorMessage + " Contact us if you think this is an error or an mistake.");
     });
