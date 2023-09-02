@@ -66,7 +66,8 @@ function getCookie(cname) {
 </h1>
 <span id="aboutlib"></span>
   <script>
-      var type = window.location.hash.substr(1).replaceAll("%20", " ");
+       var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var parts = type.split("#");
   var artist = parts[0];
     $("#aboutlib").load("https://bgr.glitch.me/api/about.html");
   </script>
