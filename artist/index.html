@@ -66,6 +66,8 @@ function getCookie(cname) {
 </h1>
 <span id="aboutlib"></span>
   <script>
+      var type = window.location.hash.substr(1).replaceAll("%20", " ");
+  var artist = parts[0];
     $("#aboutlib").load("https://bgr.glitch.me/api/about.html");
   </script>
           <button id="likepage" onclick="likecheck()" style="border-radius: 50px; background-color: pink">Like Page</button> <span><span id="likesamount">{BGAPI.LIKES}</span> Likes</span>
