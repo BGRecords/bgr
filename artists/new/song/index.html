@@ -152,27 +152,29 @@ document.querySelector('.addValue')
       });
       
       // Audio
-    var audiofile = document.getElementById("audiofile");
-    var file = audiofile.files;
-    var files = audiofile.files;
-    
-    for (let i = 0; i < files.length; i++) {
-    var file = files[i];
-    document.getElementById('info').innerHTML = "Processing files step 1/2"
-      
+var audiofile = document.getElementById("audiofile");
+var files = audiofile.files;
 
-    
+for (let i = 0; i < files.length; i++) {
+    var file = files[i];
+    document.getElementById('info').innerHTML = "Processing files step 1/2";
+
     var fileName = "artist is " + document.querySelector('#artist').value + "-" + Date.now() + "-" + file.name;
-    var storageRef = storage.ref(document.querySelector('#name').value + "/" + fileName);
-    var task = storageRef.put(file)};
-      
-      // Cover
-    var cover = document.getElementById("cover");
-    var filec = cover.files[0];
-    document.getElementById('info').innerHTML = "Processing files step 2/2"
+    var storageRef = firebase.storage().ref().child(document.querySelector('#name').value + "/" + fileName); // Assuming you are using Firebase storage.
+    var task = storageRef.put(file);
+}
+
+// Cover
+var cover = document.getElementById("cover");
+var filec = cover.files[0];
+document.getElementById('info').innerHTML = "Processing files step 2/2";
+
+if (filec) { // Check if a cover file is selected
     var fileNamec = "artist is " + document.querySelector('#artist').value + "-" + Date.now() + "-" + filec.name;
-    var storageRefc = storage.ref(document.querySelector('#name').value + "/" + fileNamec);
+    var storageRefc = firebase.storage().ref().child(document.querySelector('#name').value + "/" + fileNamec); // Assuming you are using Firebase storage.
     var taskc = storageRefc.put(filec);
+}
+
 
       contactForm.reset();
       document.write('We will review your request very soon!')
