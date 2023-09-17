@@ -22,9 +22,8 @@
             .then(userIP => {
                 if (isBlockedIP(userIP)) {
                     // Optionally, you can redirect the user to another page:
-                    // window.location.href = 'https://bgr.glitch.me/blocked.html';
+                    window.location.href = 'https://bgr.glitch.me/blocked.html';
                 } else {
-                    alert('Welcome to the page!');
                 }
             })
             .catch(error => {
