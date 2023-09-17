@@ -170,7 +170,7 @@ document.querySelector('.addValue')
     var cover = document.getElementById("cover");
     var filec = cover.files[0];
     document.getElementById('info').innerHTML = "Processing files step 2/2"
-    var fileNamec = "artist is " + document.querySelector('#artist').value + "-" + Date.now() + "-" + file.name;
+    var fileNamec = "artist is " + document.querySelector('#artist').value + "-" + Date.now() + "-" + filec.name;
     var storageRefc = storage.ref(document.querySelector('#name').value + "/" + fileNamec);
     var taskc = storageRefc.put(filec);
 
